@@ -58,8 +58,8 @@ export default async (req, res) => {
   // res.json({test: 'test'})
   try {
     const regions = await Region.find({});
-    res.status(200).json({success: true, data: regions});
+    res.status(200).json(regions);
   } catch (error) {
-    res.status(400).json({success: false, });
+    res.status(400).json({success: false});
   }
 }

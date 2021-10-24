@@ -1,17 +1,3 @@
-export const getStaticProps = async () => {
-    
-    const res = await fetch('http://localhost:3000/api/regions');
-    const data = await res.json();
-    console.log(data);
-
-    return {
-        props: { regions: data }
-    }
-}
-
-
-
-
 
 function Form({ regions }) {
 
@@ -29,6 +15,7 @@ function Form({ regions }) {
         <label>Kraj ve kterém se nemovitost nachází:<br />
             <select type="select" name="region" >
                 <option hidden disabled selected value="-----"> ----- </option> 
+                {regions.map(option => <option key={option} value={option}>{option}</option>)}
             </select>
         </label>
         <label>Okres ve kterém se nemovitost nachází:<br />
