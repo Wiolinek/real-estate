@@ -7,8 +7,9 @@ export default async (req, res) => {
 
   try {
     const offers = await Offer.find({});
-    res.status(200).json({success: true, data: offers});
+    res.status(200).json(offers);
+    // res.status(200).json(JSON.stringify(offers))
   } catch (error) {
-    res.status(400).json({success: false, });
+    res.status(400).json({success: false});
   }
 }
