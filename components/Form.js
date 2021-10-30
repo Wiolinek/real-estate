@@ -61,12 +61,20 @@ function FormComp({ regionsState, districtsState, setDistrictHandler }) {
     // };
 
     const validationSchema = Yup.object({
-        estateType: Yup.string().required('This field is required'),
-        region: Yup.string().required('This field is required'),
-        district: Yup.string().required('This field is required'),
-        name: Yup.string().required('This field is required'),
-        phone: Yup.string().required('This field is required'),
-        email: Yup.string().email('Invalid email format').required('This field is required'),
+        estateType: Yup.string().required('Estate type is required'),
+        region: Yup.string().required('Region is required'),
+        district: Yup.string().required('District is required'),
+        name: Yup.string().required('Name is required')
+            .min(2, "Name should have at least 2 letters"),
+        phone: Yup.string()
+            .required('Phone is required')
+            .min(12, "Phone number should have at least 12 numbers and starts with +420")
+            .matches(/^(\+420)[0-9]/, "Phone number should start with +420"),
+        email: Yup.string()
+            .required("Email address is required")
+            .min(5, "Email address should have at least 5 letters")
+            .email("Email must be a valid email address")
+            .matches(/^[^@]+@[^@]+\.[^@]+$/, "Email address should include '@'")
     });
 
     const formik = useFormik({
