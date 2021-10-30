@@ -93,7 +93,7 @@ section header {
   background-color: lightblue;
 }
 
-.sale main p, .buy main p {
+.sale-text, .buy main p {
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1 / 2;
@@ -142,11 +142,17 @@ section header {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
-          flex-direction: column;
+          flex-direction: column; 
   font-size: 1.3rem;
   font-style: italic;
   text-align: left;
   color: white;
+}
+
+.form-error {
+  font-size: 1rem;
+  color: red;
+  text-align: start;
 }
 
 .sale main form label input, .sale main form label option, .sale main form label select, .buy main form label input, .buy main form label option, .buy main form label select {
