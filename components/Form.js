@@ -16,6 +16,7 @@ function FormComp({ regionsState, districtsState, setDistrictHandler }) {
     const onSubmit = (values, onSubmitProps) =>  {/*onSubmitProps has some methods inside */
         console.log(values);
         onSubmitProps.setSubmitting(false); /* in real life we need to wait for API response and then run this function*/
+        onSubmitProps.resetForm();
     };
 
     // const validate = values => {
@@ -189,6 +190,7 @@ function FormComp({ regionsState, districtsState, setDistrictHandler }) {
             <ErrorMessage name="email" component="p" className="form-error"/>
             <button type="submit" disabled={formik.isSubmitting}>Posli</button>
             {/* turn off the button when form is submitting - we need to change it back to false by ourselves in onSubmit function */}
+            <button type="reset">Reset form data</button>
         </Form>
     </Formik>
   );
