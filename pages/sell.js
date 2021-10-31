@@ -18,6 +18,7 @@ export async function getStaticProps() {
 
 function Sell({ regions }) {
 
+  const estateTypes = ['Byt', 'Dům', 'Pozemek'];
   const [regionsState, setRegionsState] = useState(Array.from(new Set(regions.map(region => region.region))));
   const [districtsState, setDistrictsState] = useState();
 
@@ -40,7 +41,7 @@ function Sell({ regions }) {
           <p className="sale-text">Najdeme vám makléře, který všechno pro vás zaridi. Správně nafoti, naceni a zainzeruje. Stačí jen vyplnit nas krátký formulář o nemovitosti a hned vas budeme kontaktovat.
           </p>
           <Link href="/">Zpet</Link>
-          <Form regionsState={regionsState} districtsState={districtsState} setDistrictHandler={setDistrictHandler} />
+          <Form estateTypes={estateTypes} regionsState={regionsState} districtsState={districtsState} setDistrictHandler={setDistrictHandler} />
         </main>
       </section>
     </>

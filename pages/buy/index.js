@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Head from 'next/head';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 export async function getStaticProps() {
     
@@ -11,18 +11,18 @@ export async function getStaticProps() {
     props: {
         regions: data,
     },
-    revalidate: 1,
   }
 }
 
 
 function Buy({ regions }) {
 
+  const estateTypes = ['Byt', 'Dům', 'Pozemek'];
   const [regionsState, setRegionsState] = useState(Array.from(new Set(regions.map(region => region.region))));
   const [districtsState, setDistrictsState] = useState();
   const [chosenDistrict, setChosenDistrict] = useState('');
 
-  const setDistrictHandler = (e) => {
+  const setDistrictHandler = e => {
     const chosenRegion = e.currentTarget.value;
     setDistrictsState(regions.filter(region => region.region === chosenRegion && region.district));
   };
@@ -45,19 +45,17 @@ function Buy({ regions }) {
               <label>Typ nemovitosti:<br />
                 <select type="select" name="estateType" >
                     <option hidden disabled selected> ----- </option>
-                    <option value="byt">Byt</option>
-                    <option value="dum">Dům</option>
-                    <option value="pozemek">Pozemek</option>
+                    {estateTypes.map(option => <option key={option} value={option}>{option}</option>)}
                 </select>
               </label>
               <label>Kraj ve kterém se nemovitost nachází:<br />
-                <select type="select" name="region" onChange={(e) => setDistrictHandler(e)}>
+                <select type="select" name="region" onChange={e => setDistrictHandler(e)}>
                     <option hidden disabled selected value="-----"> ----- </option> 
                     {regionsState && regionsState.map(option => <option key={option} value={option}>{option}</option>)}
                 </select>
               </label>
               <label>Okres ve kterém se nemovitost nachází:<br />
-                <select type="select" name="district" onChange={(e) => setChosenDistrict(e.currentTarget.value)}>
+                <select type="select" name="district" onChange={e => setChosenDistrict(e.currentTarget.value)}>
                     <option hidden disabled selected value="-----"> ----- </option>
                     {districtsState && districtsState.map(option => <option key={option.district} value={option.district}>{option.district}</option>)}
                 </select>
