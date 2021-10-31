@@ -13,8 +13,9 @@ function FormComp({ regionsState, districtsState, setDistrictHandler }) {
         email: '',
     };
 
-    const onSubmit = values => {
-        console.log(values)
+    const onSubmit = (values, onSubmitProps) =>  {/*onSubmitProps has some methods inside */
+        console.log(values);
+        onSubmitProps.setSubmitting(false); /* in real life we need to wait for API response and then run this function*/
     };
 
     // const validate = values => {
@@ -83,13 +84,16 @@ function FormComp({ regionsState, districtsState, setDistrictHandler }) {
         validationSchema,
         // validate,
     });
-
+  
   
   return (
     <Formik
         initialValues={initialValues}
         onSubmit={onSubmit}
         validationSchema={validationSchema}
+        // validateOnChange={false} /* optional */
+        // validateOnBlur={false} /* optional */
+        // validateOnMount /*validation run when page is load as soon as form mounts in DOM if inputs are empty isValid props is set to false*/
     >
         {/* <form onSubmit={formik.handleSubmit}> */}
         <Form>
@@ -183,7 +187,8 @@ function FormComp({ regionsState, districtsState, setDistrictHandler }) {
             </label>
             {/* {formik.touched.email && formik.errors.email ? <p className="form-error">{formik.errors.email}</p> : null} */}
             <ErrorMessage name="email" component="p" className="form-error"/>
-            <button type="submit">Posli</button>
+            <button type="submit" disabled={formik.isSubmitting}>Posli</button>
+            {/* turn off the button when form is submitting - we need to change it back to false by ourselves in onSubmit function */}
         </Form>
     </Formik>
   );
