@@ -23,7 +23,7 @@ function Results({ offers }) {
       </Head>
       <section>
         <Link href="/buy">Back to search</Link>
-        <div>
+        <div className="offers-list">
           {offers.map(offer => <Offer key={offer.id} id={offer.id} region={offer.region} district={offer.district} size={offer.size} image={offer.image} />)}
         </div>
       </section>

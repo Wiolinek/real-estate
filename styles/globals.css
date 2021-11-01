@@ -8,6 +8,7 @@
 
 section {
   width: 100vw;
+  min-height: 95vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -236,8 +237,26 @@ button[type=submit]:hover, .show-offers-btn:hover {
   border: 1px solid white;
 }
 
+.offers-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 1.5rem;
+}
+
 .offer {
-  width: 30vw;
+  width: 25vw;
+  margin: 2rem;
+  padding: 1rem;
+  background-color: rgba(211, 206, 206, .7);
+}
+
+.offer h3 {
+  margin: .5rem 0;
+}
+
+.offer a {
+  margin: 1rem 0 .5rem 0;
 }
 
 footer {

@@ -12,8 +12,6 @@ export async function getServerSideProps(context) {
   const data = await response.json();
   const offers = await data.filter(offer => offer.district === district && offer);
 
-  console.log(offers)
-
   return {  
     props: {
         offers,
