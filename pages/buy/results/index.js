@@ -15,6 +15,7 @@ export async function getServerSideProps() {
 
 
 function Results({ offers }) {
+
   return ( 
     <>
       <Head>

@@ -237,7 +237,7 @@ button[type=submit]:hover, .show-offers-btn:hover {
   border: 1px solid white;
 }
 
-.offers-list {
+.offers-list, .district-offers-list {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;

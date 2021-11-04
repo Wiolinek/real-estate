@@ -9,9 +9,8 @@ function Offer({ id, region, district, size, description, image }) {
         <h3 className="offer__region">{region}</h3>
         <h3 className="offer__district">{district}</h3>
         <h3 className="offer__size">{size} m2</h3>
-        <Image src={image} width={540} height={378}></Image>
+        {/* <Image src={`/${image}`} width={540} height={378}></Image> */}
         <p className="offer__description">{description}</p>
-        <Link href={`/buy/results/${id}`}>Read more...</Link>
       </div>
     </>
   )
