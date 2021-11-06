@@ -1,15 +1,20 @@
 import Link from 'next/link';
 import Head from 'next/head';
 import { useState } from 'react';
+import Region from '../models/region';
+import mongodb from '../../lib/mongodb';
+
 
 export async function getStaticProps() {
-    
-  const response = await fetch('http://localhost:3000/api/regions');
-  const data = await response.json();
+
+  mongodb();
+
+  const data = await Region.find({});
+  const regions = await JSON.parse(JSON.stringify(data));
 
   return {
     props: {
-        regions: data,
+        regions,
     },
   }
 }
@@ -21,10 +26,11 @@ function Buy({ regions }) {
   const [regionsState, setRegionsState] = useState(Array.from(new Set(regions.map(region => region.region))));
   const [districtsState, setDistrictsState] = useState();
   const [chosenDistrict, setChosenDistrict] = useState('');
+  console.log(regionsState)
+  console.log(districtsState)
 
   const setDistrictHandler = e => {
-    const chosenRegion = e.currentTarget.value;
-    setDistrictsState(regions.filter(region => region.region === chosenRegion && region.district));
+    setDistrictsState(regions.filter(region => region.region === e.currentTarget.value && region.district).map(region => region.district));
   };
   
   

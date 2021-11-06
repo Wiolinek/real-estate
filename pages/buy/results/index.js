@@ -1,14 +1,19 @@
 import Link from 'next/link';
 import Head from 'next/head';
 import Offer from '../../../components/offer';
+import OfferModel from '../../models/offer';
+import mongodb from '../../../lib/mongodb';
 
 export async function getServerSideProps() {
-  const response = await fetch(`http://localhost:3000/api/offers`);
-  const data = await response.json();
+
+  mongodb();
+
+  const data = await OfferModel.find({});
+  const offers = await JSON.parse(JSON.stringify(data));
 
   return {
     props: {
-        offers: data,
+        offers,
     },
   }
 }

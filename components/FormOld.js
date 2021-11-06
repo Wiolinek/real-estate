@@ -144,7 +144,7 @@ function FormComp({ regionsState, districtsState, setDistrictHandler }) {
                     // onBlur={formik.handleBlur}
                 >
                     <option hidden disabled selected value={formik.values.district === '' ? formik.values.district : ' ----- '}> ----- </option>
-                    {districtsState && districtsState.map(option => <option key={option.district} value={option.district}>{option.district}</option>)}
+                    {districtsState && districtsState.map(option => <option key={option} value={option}>{option}</option>)}
                 </Field>
             </label>
             {/* {formik.touched.district && formik.errors.district ? <p className="form-error">{formik.errors.district}</p> : null} */}
