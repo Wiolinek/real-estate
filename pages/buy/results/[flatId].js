@@ -1,46 +1,65 @@
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 import Link from 'next/link';
 import Head from 'next/head';
-import Offer from '../../../components/Offer';
+import Offer from '../../../components/Offer'
+import mongodb from '../../../lib/mongodb';
+import OfferModel from '../../models/offer';
 
-export async function getStaticPaths() {
-  const response = await fetch(`http://localhost:3000/api/offers`);
-  const data = await response.json();
 
-  const paths = data.map(offer => {
-    return {
-      params: {
-        flatId: `${offer.id}`
-      }
-    }
-  })
 
-  return {
-    paths,
-    fallback: false,
-  }
-}
+// export async function getStaticPaths() {
+//   const response = await fetch(`http://localhost:3000/api/offers`);
+//   const data = await response.json();
 
-export async function getStaticProps(context) {
-  const { params } = context;
-  const response = await fetch(`http://localhost:3000/api/offers?id=${params.flatId}`);
-  const data = await response.json();
-  const offer = await data.filter(offer => offer.id === params.flatId && offer);
+//   const paths = data.map(offer => {
+//     return {
+//       params: {
+//         flatId: `${offer.id}`
+//       }
+//     }
+//   })
 
-  console.log(offer)
+//   return {
+//     paths,
+//     fallback: false,
+//   }
+// }
+
+// export async function getStaticProps(context) {
+//   const { flatId } = context.params;
+//   const response = await fetch(`http://localhost:3000/api/offers`); /* ? */
+//   const data = await response.json();
+//   const offer = await data.filter(offer => offer.id === flatId && offer);
+
+//   console.log(offer)
+
+//   return {
+//     props: {
+//         offer: offer,
+//     },
+//   }
+// }
+
+export async function getServerSideProps(context) {
+  const { flatId } = context.query;
+
+  mongodb();
+
+  const data = await OfferModel.findOne({id: flatId});
+  const offer = await JSON.parse(JSON.stringify(data));
 
   return {
     props: {
-        offer: data,
+        offer,
     },
   }
 }
 
 
-function Flat({ offer }) {
+function Flat({offer}) {
   const router = useRouter();
   const flatId = router.query.flatId;
-  
 
   return (
     <>
@@ -49,11 +68,8 @@ function Flat({ offer }) {
         <meta name="" content=""/>
       </Head>
       <section>
-      <Link href="/buy/results">Back to results</Link>
-        <div>
-          To jsou detaily nabidky cislo {flatId}
-        </div>
-        {/* <Offer id={offer.id} region={offer.region} district={offer.district} size={offer.size} description={offer.description}/> */}
+      <button onClick={() => router.back()}>Back to results</button>
+        <Offer id={offer.id} region={offer.region} district={offer.district} size={offer.size} description={offer.description} image={offer.image}/>
       </section>
     </>
   )

@@ -14,7 +14,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-        regions,
+        regions : regions,
     },
   }
 }
@@ -26,8 +26,6 @@ function Buy({ regions }) {
   const [regionsState, setRegionsState] = useState(Array.from(new Set(regions.map(region => region.region))));
   const [districtsState, setDistrictsState] = useState();
   const [chosenDistrict, setChosenDistrict] = useState('');
-  console.log(regionsState)
-  console.log(districtsState)
 
   const setDistrictHandler = e => {
     setDistrictsState(regions.filter(region => region.region === e.currentTarget.value && region.district).map(region => region.district));
@@ -63,7 +61,7 @@ function Buy({ regions }) {
               <label>Okres ve kterém se nemovitost nachází:<br />
                 <select type="select" name="district" onChange={e => setChosenDistrict(e.currentTarget.value)}>
                     <option hidden disabled selected value="-----"> ----- </option>
-                    {districtsState && districtsState.map(option => <option key={option.district} value={option.district}>{option.district}</option>)}
+                    {districtsState && districtsState.map(option => <option key={option} value={option}>{option}</option>)}
                 </select>
               </label>
               <Link href={`/buy/${chosenDistrict}`}>Ukaz nabidky podle okresu</Link>
