@@ -244,19 +244,27 @@ button[type=submit]:hover, .show-offers-btn:hover {
   padding: 1.5rem;
 }
 
-.offer {
+.single-offer {
   width: 25vw;
   margin: 2rem;
   padding: 1rem;
   background-color: rgba(211, 206, 206, .7);
 }
 
-.offer h3 {
+.single-offer h3, .offer h3 {
   margin: .5rem 0;
 }
 
-.offer a {
-  margin: 1rem 0 .5rem 0;
+.single-offer a, .offer a {
+  margin: 1rem auto .5rem auto;
+}
+
+.offer {
+  width: 90vw;
+  min-height: 70%;
+  margin: 2rem;
+  padding: 1rem;
+  background-color: rgba(211, 206, 206, .7);
 }
 
 footer {

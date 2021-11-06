@@ -30,7 +30,12 @@ function Results({ offers }) {
       <section>
         <Link href="/buy">Back to search</Link>
         <div className="offers-list">
-          {offers.map(offer => <Offer key={offer.id} id={offer.id} region={offer.region} district={offer.district} size={offer.size} image={offer.image} />)}
+          {offers.map(offer => 
+            <div className="single-offer">
+              <Offer key={offer.id} id={offer.id} region={offer.region} district={offer.district} size={offer.size} image={offer.image} />
+              <Link href={`/buy/results/${offer.id}`}>Read more...</Link>
+            </div>
+            )}
         </div>
       </section>
     </>
