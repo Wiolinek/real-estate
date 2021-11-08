@@ -42,11 +42,11 @@ import OfferModel from '../../models/offer';
 // }
 
 export async function getServerSideProps(context) {
-  const { flatId } = context.query;
+  const flatId = context.params.flatId;
 
   mongodb();
 
-  const data = await OfferModel.findOne({id: flatId});
+  const data = await OfferModel.findById({_id: flatId});
   const offer = await JSON.parse(JSON.stringify(data));
 
   return {
@@ -59,7 +59,7 @@ export async function getServerSideProps(context) {
 
 function Flat({offer}) {
   const router = useRouter();
-  const flatId = router.query.flatId;
+  const flatId = router.query._id;
 
   return (
     <>
@@ -67,9 +67,9 @@ function Flat({offer}) {
         <title>Details - offer ID {flatId}</title>
         <meta name="" content=""/>
       </Head>
-      <section>
+      <section className="filtered-results">
       <button onClick={() => router.back()}>Back to results</button>
-        <Offer id={offer.id} region={offer.region} district={offer.district} size={offer.size} description={offer.description} image={offer.image}/>
+        <Offer region={offer.region} district={offer.district} size={offer.size} description={offer.description} image={offer.image}/>
       </section>
     </>
   )
