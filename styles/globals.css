@@ -259,8 +259,8 @@ button[type=submit]:hover, .show-offers-btn:hover {
   margin: 1rem auto .5rem auto;
 }
 
-.offer {
-  width: 90vw;
+.filtered-results .offer {
+  width: 90%;
   min-height: 70%;
   margin: 2rem;
   padding: 1rem;

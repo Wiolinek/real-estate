@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-function Offer({ id, region, district, size, description, image }) {
+function Offer({ region, district, size, description, image }) {
 
   return (
     <>
