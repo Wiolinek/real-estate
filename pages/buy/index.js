@@ -26,6 +26,7 @@ function Buy({ regions }) {
   const [regionsState, setRegionsState] = useState(Array.from(new Set(regions.map(region => region.region))));
   const [districtsState, setDistrictsState] = useState();
   const [chosenDistrict, setChosenDistrict] = useState('');
+  const [chosenEstateType, setChosenEstateType] = useState('');
 
   const setDistrictHandler = e => {
     setDistrictsState(regions.filter(region => region.region === e.currentTarget.value && region.district).map(region => region.district));
@@ -47,7 +48,7 @@ function Buy({ regions }) {
             <Link href="/">Zpet</Link>
             <form>
               <label>Typ nemovitosti:<br />
-                <select type="select" name="estateType" >
+                <select type="select" name="estateType" onChange={e => setChosenEstateType(e.currentTarget.value)}>
                     <option hidden disabled selected> ----- </option>
                     {estateTypes.map(option => <option key={option} value={option}>{option}</option>)}
                 </select>
@@ -64,8 +65,8 @@ function Buy({ regions }) {
                     {districtsState && districtsState.map(option => <option key={option} value={option}>{option}</option>)}
                 </select>
               </label>
-              <Link href={`/buy/${chosenDistrict}`}>Ukaz nabidky podle okresu</Link>
-              <Link href={`/buy/results`}>Ukaz nabidky</Link>
+              <Link href={`/buy/${chosenEstateType}/${chosenDistrict}`}>Ukaz nabidky podle okresu</Link>
+              {/* <Link href={`/buy/results`}>Ukaz nabidky</Link> */}
           </form>
         </main>
       </section>
