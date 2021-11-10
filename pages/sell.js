@@ -4,6 +4,7 @@ import Form from '../components/Form';
 import { useState } from 'react';
 import Region from '../pages/models/region';
 import mongodb from '../lib/mongodb';
+import styles from '../styles/Sell.module.css';
 
 
 export async function getStaticProps() {
@@ -38,12 +39,12 @@ function Sell({ regions }) {
         <title>SELL something!</title>
         <meta name="" content=""/>
       </Head>
-      <section className="sale">
+      <section className={styles.sale}>
         <header>
           <h1>Chcete prodát svoji nemovitost?</h1>
         </header>
         <main>
-          <p className="sale-text">Najdeme vám makléře, který všechno pro vás zaridi. Správně nafoti, naceni a zainzeruje. Stačí jen vyplnit nas krátký formulář o nemovitosti a hned vas budeme kontaktovat.
+          <p className={styles.text}>Najdeme vám makléře, který všechno pro vás zaridi. Správně nafoti, naceni a zainzeruje. Stačí jen vyplnit nas krátký formulář o nemovitosti a hned vas budeme kontaktovat.
           </p>
           <Link href="/">Zpet</Link>
           <Form estateTypes={estateTypes} regionsState={regionsState} districtsState={districtsState} setDistrictHandler={setDistrictHandler} />

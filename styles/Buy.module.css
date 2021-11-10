@@ -1,0 +1,107 @@
+.buy header {
+    min-height: 20vh;
+    background-color: white;
+}
+  
+.buy main {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    min-height: 75vh;
+    padding: 2em 6vw 2em 6vw;
+    background-color: #929292;
+    background-image: url("../public/images/back-buy.jpg");
+    background-blend-mode: screen;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.buy main p {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1 / 2;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1 / 2;
+    font-size: 2rem;
+    line-height: 2em;
+    text-shadow: 1px 1px 1px grey;
+    letter-spacing: .02em;
+    text-align: left;
+    font-weight: 500;
+    -ms-flex-item-align: end;
+    align-self: flex-end;
+    width: 80%;
+}
+  
+.buy main form {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / 3;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    grid-row: 1 / 3;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 90%;
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 1.7em 0 0 1.7em;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+  
+.buy main form label {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; 
+    font-size: 1.3rem;
+    font-style: italic;
+    text-align: left;
+    color: white;
+}
+
+.buy main form label input, .buy main form label option, .buy main form label select {
+    width: 400px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top: .3em;
+    height: 30px;
+}
+  
+.buy main form label span {
+    font-size: 1.2rem;
+    letter-spacing: .03em;
+    color: red;
+    margin-top: .3em;
+  }
+  
+.buy form a {
+    margin: 0 1.5em 1.5em 0;
+    -ms-flex-item-align: end;
+    align-self: flex-end;
+    color: black;
+    background-color: white;
+}
+
+.buy form a:hover {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+}

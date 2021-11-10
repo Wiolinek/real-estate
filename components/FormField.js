@@ -1,9 +1,9 @@
 import { Field, ErrorMessage } from 'formik';
-import * as Yup from 'yup'; 
+import * as Yup from 'yup';
+import styles from '../styles/Sell.module.css';
 
 
-function FormField({label, as, type, name, options, value}) {
-
+function FormField({ label, as, type, name, options }) {
 
     return (
         <>
@@ -17,7 +17,7 @@ function FormField({label, as, type, name, options, value}) {
                     {options && options.map(option => <option key={option} value={option}>{option}</option>)}
                 </Field> 
             </label>
-            <ErrorMessage name={name} component="p" className="form-error"/>
+            <ErrorMessage name={name} component="p" className={styles['form-error']}/>
         </>
     );
 }

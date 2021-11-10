@@ -4,6 +4,7 @@ import Head from 'next/head';
 import Offer from '../../components/offer';
 import OfferModel from '../models/offer';
 import mongodb from '../../lib/mongodb';
+import styles from '../../styles/Offer.module.css'
 
 
 // export async function getServerSideProps(context) {
@@ -53,9 +54,9 @@ function OffersListByDistrict({ offers, district }) {
       </Head>
       <section>
         <Link href="/buy">Back to search</Link>
-        <div className="district-offers-list">
+        <div className={styles['district-offers-list']}>
           {offers.map(offer => 
-            <div className="single-offer">
+            <div className={styles['single-offer']}>
               <Offer key={offer._id} region={offer.region} district={offer.district} size={offer.size} image={offer.image} />
               <Link href={`/buy/results/${offer._id}`}>Read more...</Link>
             </div>

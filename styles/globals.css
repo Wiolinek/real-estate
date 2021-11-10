@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-family: 'PT Sans', sans-serif;
 }
 
@@ -14,11 +14,18 @@ section {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+section header {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 section header, section main {
@@ -26,8 +33,8 @@ section header, section main {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
   width: 100%;
   min-width: 300px;
   text-align: center;
@@ -49,153 +56,6 @@ section header h2, section main h2 {
   letter-spacing: .03em;
 }
 
-section header {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.main header {
-  min-height: 55vh;
-  background-color: #929292;
-  background-image: url("../public/images/back.jpg");
-  background-blend-mode: screen;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.main main {
-  min-height: 40vh;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.main main p {
-  display: none;
-}
-
-.sale header, .buy header {
-  min-height: 20vh;
-  background-color: white;
-}
-
-.sale main, .buy main {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  min-height: 75vh;
-  padding: 2em 6vw 2em 6vw;
-  background-color: lightblue;
-}
-
-.sale-text, .buy main p {
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 1;
-  grid-column: 1 / 2;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1 / 2;
-  font-size: 2rem;
-  line-height: 2em;
-  text-shadow: 1px 1px 1px grey;
-  letter-spacing: .02em;
-  text-align: left;
-  font-weight: 500;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  width: 80%;
-}
-
-.sale main form, .buy main form {
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-column: 2 / 3;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
-  grid-row: 1 / 3;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 90%;
-  background-color: rgba(0, 0, 0, 0.85);
-  padding: 1.7em 0 0 1.7em;
-  margin: 0 auto;
-  border-radius: 5px;
-}
-
-.sale main form label, .buy main form label {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column; 
-  font-size: 1.3rem;
-  font-style: italic;
-  text-align: left;
-  color: white;
-}
-
-.form-error {
-  font-size: 1rem;
-  color: red;
-  text-align: start;
-}
-
-.sale main form label input, .sale main form label option, .sale main form label select, .buy main form label input, .buy main form label option, .buy main form label select {
-  width: 400px;
-  border: 1px solid black;
-  border-radius: 5px;
-  margin-top: .3em;
-  height: 30px;
-}
-
-.sale main form label span, .buy main form label span {
-  font-size: 1.2rem;
-  letter-spacing: .03em;
-  color: red;
-  margin-top: .3em;
-}
-
-.sale main form button, .buy main form button {
-  -ms-flex-item-align: right;
-      -ms-grid-row-align: right;
-      align-self: right;
-  margin: 0 1.5em 1.5em 0;
-}
-
-.sale main {
-  background-color: #929292;
-  background-image: url("../public/images/back-sale.jpg");
-  background-blend-mode: screen;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-}
-
-.buy main {
-  background-color: #929292;
-  background-image: url("../public/images/back-buy.jpg");
-  background-blend-mode: screen;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-}
-
 button, a {
   height: 70px;
   border: 1px solid black;
@@ -207,11 +67,11 @@ button, a {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-transition: all .5s;
   transition: all .5s;
   cursor: pointer;
@@ -220,51 +80,21 @@ button, a {
 }
 
 button:hover, a:hover {
-  /* color: black;
-  background-color: white; */
-}
-
-button[type=submit], .show-offers-btn {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
   color: black;
   background-color: white;
 }
 
-button[type=submit]:hover, .show-offers-btn:hover {
+button[type=submit] {
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  color: black;
+  background-color: white;
+}
+
+button[type=submit]:hover {
   background-color: black;
   color: white;
   border: 1px solid white;
-}
-
-.offers-list, .district-offers-list {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 1.5rem;
-}
-
-.single-offer {
-  width: 25vw;
-  margin: 2rem;
-  padding: 1rem;
-  background-color: rgba(211, 206, 206, .7);
-}
-
-.single-offer h3, .offer h3 {
-  margin: .5rem 0;
-}
-
-.single-offer a, .offer a {
-  margin: 1rem auto .5rem auto;
-}
-
-.filtered-results .offer {
-  width: 90%;
-  min-height: 70%;
-  margin: 2rem;
-  padding: 1rem;
-  background-color: rgba(211, 206, 206, .7);
 }
 
 footer {
@@ -296,8 +126,8 @@ footer {
   main {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
 }
 

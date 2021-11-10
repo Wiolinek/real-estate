@@ -5,6 +5,7 @@ import Head from 'next/head';
 import Offer from '../../../components/Offer'
 import mongodb from '../../../lib/mongodb';
 import OfferModel from '../../models/offer';
+import styles from '../../../styles/Offer.module.css';
 
 
 
@@ -67,7 +68,7 @@ function Flat({offer}) {
         <title>Details - offer ID {flatId}</title>
         <meta name="" content=""/>
       </Head>
-      <section className="filtered-results">
+      <section className={styles['filtered-results']}>
       <button onClick={() => router.back()}>Back to results</button>
         <Offer region={offer.region} district={offer.district} size={offer.size} description={offer.description} image={offer.image}/>
       </section>

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Head from 'next/head';
+import styles from '../styles/Home.module.css';
 
 
 function Home() {
@@ -9,7 +10,7 @@ function Home() {
         <title>Welcome!</title>
         <meta name="" content=""/>
       </Head>
-      <section className="main">
+      <section className={styles.main}>
         <header>
           <h1>Welcome</h1>
           <h2>What would you like to do?</h2>

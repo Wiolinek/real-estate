@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { useState } from 'react';
 import Region from '../models/region';
 import mongodb from '../../lib/mongodb';
+import styles from '../../styles/Buy.module.css';
 
 
 export async function getStaticProps() {
@@ -39,7 +40,7 @@ function Buy({ regions }) {
         <title>BUY something!</title>
         <meta name="" content=""/>
       </Head>
-      <section className="buy">
+      <section className={styles.buy}>
         <header>
           <h1>Hledáte nemovitost ke koupi?</h1>
         </header>
@@ -65,7 +66,7 @@ function Buy({ regions }) {
                     {districtsState && districtsState.map(option => <option key={option} value={option}>{option}</option>)}
                 </select>
               </label>
-              <Link href={`/buy/${chosenEstateType}/${chosenDistrict}`}>Ukaz nabidky podle okresu</Link>
+              <Link href={`/buy/${chosenEstateType}/${chosenDistrict}`}>Ukaz nabidky</Link>
               {/* <Link href={`/buy/results`}>Ukaz nabidky</Link> */}
           </form>
         </main>

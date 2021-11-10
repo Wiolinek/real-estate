@@ -1,16 +1,16 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import styles from '../styles/Offer.module.css';
 
 function Offer({ region, district, size, description, image }) {
 
   return (
     <>
-      <div className="offer">
-        <h3 className="offer__region">{region}</h3>
-        <h3 className="offer__district">{district}</h3>
-        <h3 className="offer__size">{size} m2</h3>
+      <div className={styles.offer}>
+        <h3>{region}</h3>
+        <h3>{district}</h3>
+        <h3>{size} m2</h3>
         <Image src={image} width={540} height={378}></Image>
-        <p className="offer__description">{description}</p>
+        <p>{description}</p>
       </div>
     </>
   )
