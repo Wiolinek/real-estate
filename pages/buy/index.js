@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import Head from 'next/head';
 import { useState } from 'react';
-import Region from '../models/region';
-import mongodb from '../../lib/mongodb';
-import styles from '../../styles/Buy.module.css';
+import Region from '/pages/models/region';
+import mongodb from '/lib/mongodb';
+import styles from '/styles/Buy.module.css';
 
 
 export async function getStaticProps() {

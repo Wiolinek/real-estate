@@ -1,10 +1,10 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Head from 'next/head';
-import Offer from '../../components/offer';
-import OfferModel from '../models/offer';
-import mongodb from '../../lib/mongodb';
-import styles from '../../styles/Offer.module.css'
+import Offer from '/components/offer';
+import OfferModel from '/pages/models/offer';
+import mongodb from '/lib/mongodb';
+import styles from '/styles/Offer.module.css'
 
 
 // export async function getServerSideProps(context) {
@@ -29,10 +29,9 @@ export async function getServerSideProps(context) {
 
   mongodb();
 
-  const data = await OfferModel.find({district: district, type: 'byt'});
+  const data = await OfferModel.find({district: district, type: estate});
   const offers = await JSON.parse(JSON.stringify(data));
-
-  console.log(offers);
+  // console.log(offers);
 
   return {
     props: {
@@ -57,7 +56,7 @@ function OffersListByDistrict({ offers, district }) {
         <div className={styles['district-offers-list']}>
           {offers.map(offer => 
             <div className={styles['single-offer']}>
-              <Offer key={offer._id} region={offer.region} district={offer.district} size={offer.size} image={offer.image} />
+              <Offer key={offer._id} region={offer.region} district={offer.district} size={offer.size} image={offer.image}/>
               <Link href={`/buy/results/${offer._id}`}>Read more...</Link>
             </div>
             )}

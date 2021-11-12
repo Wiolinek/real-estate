@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import Head from 'next/head';
-import Form from '../components/Form';
+import Form from '/components/Form';
 import { useState } from 'react';
-import Region from '../pages/models/region';
-import mongodb from '../lib/mongodb';
-import styles from '../styles/Sell.module.css';
+import Region from '/pages/models/region';
+import mongodb from '/lib/mongodb';
+import styles from '/styles/Sell.module.css';
 
 
 export async function getStaticProps() {

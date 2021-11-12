@@ -2,10 +2,10 @@ import { useRouter } from 'next/router';
 import Image from 'next/image';
 import Link from 'next/link';
 import Head from 'next/head';
-import Offer from '../../../components/Offer'
-import mongodb from '../../../lib/mongodb';
-import OfferModel from '../../models/offer';
-import styles from '../../../styles/Offer.module.css';
+import Offer from '/components/Offer'
+import mongodb from '/lib/mongodb';
+import OfferModel from '/pages/models/offer';
+import styles from '/styles/Offer.module.css';
 
 
 
