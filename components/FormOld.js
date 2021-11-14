@@ -88,7 +88,7 @@ function FormComp({ regionsState, districtsState, setDistrictHandler }) {
   
   
   return (
-    <Formik
+    <Formik /* we can use this component instead of useFormik hook */
         initialValues={initialValues}
         onSubmit={onSubmit}
         validationSchema={validationSchema}
@@ -103,7 +103,7 @@ function FormComp({ regionsState, districtsState, setDistrictHandler }) {
                     as="select"
                     type="select"
                     name="estateType"
-                    // {...formik.getFieldProps("estateType")}
+                    // {...formik.getFieldProps("estateType")} we can add this line instead of 3 below
                     // value={formik.values.estateType}
                     // onChange={formik.handleChange}
                     // onBlur={formik.handleBlur}

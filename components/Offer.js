@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import styles from '/styles/Offer.module.css';
+import styles from '/styles/Offer.module.sass';
 
 function Offer({ region, district, size, description, image }) {
 

@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { useState } from 'react';
 import Region from '/pages/models/region';
 import mongodb from '/lib/mongodb';
-import styles from '/styles/Buy.module.css';
+import styles from '/styles/Buy.module.sass';
 
 
 export async function getStaticProps() {

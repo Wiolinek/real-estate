@@ -5,7 +5,7 @@ import Head from 'next/head';
 import Offer from '/components/Offer'
 import mongodb from '/lib/mongodb';
 import OfferModel from '/pages/models/offer';
-import styles from '/styles/Offer.module.css';
+import styles from '/styles/Offer.module.sass';
 
 
 

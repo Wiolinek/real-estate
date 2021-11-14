@@ -4,7 +4,7 @@ import Form from '/components/Form';
 import { useState } from 'react';
 import Region from '/pages/models/region';
 import mongodb from '/lib/mongodb';
-import styles from '/styles/Sell.module.css';
+import styles from '/styles/Sell.module.sass';
 
 
 export async function getStaticProps() {

@@ -4,7 +4,7 @@ import Head from 'next/head';
 import Offer from '/components/offer';
 import OfferModel from '/pages/models/offer';
 import mongodb from '/lib/mongodb';
-import styles from '/styles/Offer.module.css'
+import styles from '/styles/Offer.module.sass'
 
 
 // export async function getServerSideProps(context) {

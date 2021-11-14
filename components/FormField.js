@@ -1,6 +1,6 @@
 import { Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import styles from '/styles/Sell.module.css';
+import styles from '/styles/Sell.module.sass';
 
 
 function FormField({ label, as, type, name, options }) {
