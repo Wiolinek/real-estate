@@ -1,19 +1,19 @@
 import { Field, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
 import styles from '/styles/Sell.module.sass';
 
 
-function FormField({ label, as, type, name, options }) {
+function Select({ label, type, name, options, setDistrictHandler }) {
 
     return (
         <>
             <label>{label}<br />
                 <Field
-                    as={as}
+                    as="select"
                     type={type}
                     name={name}
+                    onMouseUp={setDistrictHandler ? e => setDistrictHandler(e) : null}
                 >   
-                    {/* {options && <option hidden disabled selected value={value === '' ? value : ' ----- '}> ----- </option>} */}
+                    <option hidden selected value=' ----- '> ----- </option>
                     {options && options.map(option => <option key={option} value={option}>{option}</option>)}
                 </Field> 
             </label>
@@ -22,4 +22,4 @@ function FormField({ label, as, type, name, options }) {
     );
 }
 
-export default FormField;
+export default Select;

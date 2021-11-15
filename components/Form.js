@@ -1,6 +1,6 @@
 import { Formik, Form, useFormik } from 'formik';
 import * as Yup from 'yup';
-import FormField from './FormField';
+import FormFieldControler from './FormFieldControler';
 
 
 function FormComp({ estateTypes, regionsState, districtsState, setDistrictHandler }) {
@@ -31,8 +31,10 @@ function FormComp({ estateTypes, regionsState, districtsState, setDistrictHandle
             .matches(/^[^@]+@[^@]+\.[^@]+$/, "Email address should include '@'")
     });
 
-    const onSubmit = values => {
+    const onSubmit = (values, onSubmitProps) => {
         console.log(values);
+        onSubmitProps.setSubmitting(false); /* in real life we need to wait for API response and then run this function*/
+        onSubmitProps.resetForm();
     };
 
     const formik = useFormik({
@@ -50,13 +52,13 @@ function FormComp({ estateTypes, regionsState, districtsState, setDistrictHandle
     >
         {formik => (
             <Form>
-                <FormField label="Typ nemovitosti:" as="select" type="select" name="estateType" options={estateTypes} value={formik.values.estateType}/>
-                <FormField label="Kraj ve kterém se nemovitost nachází:" as="select" type="select" name="region" options={regionsState} value={formik.values.region}/>
-                <FormField label="Okres ve kterém se nemovitost nachází:" as="select" type="select" name="district" options={districtsState} value={formik.values.district}/>
-                <FormField label="Name:" as="input" type="text" name="name"/>
-                <FormField label="Telefoní číslo:" as="input" type="tel" name="phone"/>
-                <FormField label="Email:" as="input" type="email" name="email"/>
-                <button type="submit">Posli</button>
+                <FormFieldControler label="Typ nemovitosti:" as="select" type="select" name="estateType" options={estateTypes}/>
+                <FormFieldControler label="Kraj ve kterém se nemovitost nachází:" as="select" type="select" name="region" options={regionsState} setDistrictHandler={setDistrictHandler}/>
+                <FormFieldControler label="Okres ve kterém se nemovitost nachází:" as="select" type="select" name="district" options={districtsState}/>
+                <FormFieldControler label="Name:" as="input" type="text" name="name"/>
+                <FormFieldControler label="Telefoní číslo:" as="input" type="tel" name="phone"/>
+                <FormFieldControler label="Email:" as="input" type="email" name="email"/>
+                <button type="submit" disabled={formik.isSubmitting}>Posli</button>
             </Form>
         )}   
     </Formik>
