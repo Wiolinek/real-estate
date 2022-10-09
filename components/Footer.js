@@ -1,8 +1,10 @@
-function Footer() {
+const Footer = () => {
+
+  const year = new Date().getFullYear()
   
   return (
     <footer>
-        <p>Copyright &copy; 2021 Wiola Polok www.u-v.codes. All Rights Reserved</p>
+        <p>{`Copyright \u00A9 ${year} Wiola Polok www.u-v.codes. All Rights Reserved`}</p>
     </footer>
   );
 }
