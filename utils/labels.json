@@ -31,7 +31,11 @@
             "match": "offers matching your criteria."
         },
         "offerPage": {
-            "title": "Details - offer ID "
+            "title": "Details - offer ID - ",
+            "region": "Region:",
+            "district": "District:",
+            "size": "Size:",
+            "contact": "Contact:"
         },
         "form": {
             "estateType":"Estate type:",
@@ -40,7 +44,6 @@
             "nameSurname": "Name and surname:",
             "phone": "Phone number:",
             "email": "E-mail address:"
-
         },
         "formErrors": {
             "estateType": "Estate type is required",

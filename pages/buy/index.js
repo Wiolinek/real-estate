@@ -24,7 +24,7 @@ const Buy = () => {
   return (
     <>
       <Head>
-        <title>{labels?.buyPage.title}</title>
+        <title>{labels?.buyPage.title || ''}</title>
         <meta name='' content=''/>
       </Head>
       <section className={styles.form}>

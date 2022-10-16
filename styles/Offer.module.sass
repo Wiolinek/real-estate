@@ -1,30 +1,48 @@
-.offer h3, .single-offer h3
-    margin: .5rem 0
-  
+.offer .detail span:last-child, .single-offer .detail span:last-child
+    font-size: 1.1rem
+    font-weight: 700
+    
 .offer a, .single-offer a
     margin: 1rem auto .5rem auto
+
+.detail
+    display: flex
+    column-gap: 10px
+    align-items: center
+    margin: .8rem 0
+
+.images
+    display: flex
+    gap: 2vw
+    flex-wrap: wrap
 
 .offers-list, .district-offers-list
     display: grid
     grid-template-columns: repeat(3, 1fr)
     gap: 4vw
     flex-wrap: wrap
-    // width: 100%
-    // padding: 1.5rem
   
 .single-offer
     padding: 1rem
     background-color: rgba(211, 206, 206, .7)
   
-.single-offer h3, .offer h3
-    margin: .5rem 0
-  
-.single-offer a, .offer a
-    margin: 1rem auto .5rem auto
-  
 .filtered-results .offer
-    width: 90%
     min-height: 70%
-    margin: 2rem
-    padding: 1rem
+    padding: 2rem
     background-color: rgba(211, 206, 206, .7)
+
+.filtered-results .offer .description, .contact
+    font-size: 1.2rem
+    line-height: 1.6
+    margin: 3.6rem 0
+
+.contact
+    display: flex
+    column-gap: 1rem
+    align-items: flex-end
+    justify-content: space-between
+
+.contact *:not(:first-child)
+    font-size: 1.1rem
+    font-weight: 700
+    

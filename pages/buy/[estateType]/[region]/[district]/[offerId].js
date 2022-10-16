@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router';
+import Link from 'next/link';
 import Head from 'next/head';
 import Offer from '/components/Offer'
 import { useAppContext } from '/components/GlobalContext';
@@ -54,28 +54,36 @@ export async function getServerSideProps(context) {
 
 
 const OfferComp = ({ offer }) => {
-  const router = useRouter();
   const { labels } = useAppContext();
-  const item = offer.items[0].fields
+  const item = offer.items[0]?.fields
 
 
   return (
     <>
       <Head>
-        <title>{labels?.offerPage.title} {offer._id}</title>
+        <title>{labels?.offerPage.title || ''}{offer.items[0]?.sys.id}</title>
         <meta name='' content=''/>
       </Head>
-      <section className={styles['filtered-results']}>
-      <button onClick={() => router.back()}>{labels?.buttons.backToResults || ''}</button>
+      <header>
+        <Link href='/buy'>{labels?.buttons.backToResults || ''}</Link>
+        <div className={styles.contact}>
+          <span>{labels?.offerPage.contact}</span>
+          <span>Imię i nazwisko</span>
+          <span>Telefon</span>
+          <span>Email</span>
+        </div>
+      </header>
+      <main className={styles['filtered-results']}>
+      
         <Offer
-            key={item._id}
-            region={item.region}
-            district={item.district}
-            size={item.size}
-            description={item.description.content[0].content[0].value}
-            // image={item.image}
+            key={offer.items[0]?.sys.id}
+            region={item?.region}
+            district={item?.district}
+            size={item?.size}
+            description={item?.description.content[0].content[0].value}
+            images={item?.image}
         />
-      </section>
+      </main>
     </>
   )
 }

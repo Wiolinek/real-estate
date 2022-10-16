@@ -53,7 +53,7 @@ const Sell = () => {
   return (
     <>  
       <Head>
-        <title>{labels?.sellPage.title}</title>
+        <title>{labels?.sellPage.title || ''}</title>
         <meta name='' content=''/>
       </Head>
       <section className={styles.form}>

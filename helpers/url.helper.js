@@ -1,7 +1,7 @@
 import { variables } from '/utils/globals'
 
 export const URLbuilder = (estateType, region, district) => {
-    const url = [estateType, region, district ]
+    const url = [estateType, region, district]
 
     return url
         .filter(Boolean)
