@@ -1,6 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Real Estate
+
+> Real Estate is a website providing real estate services. It is home page of real estate agency with estate offers like flats, houses and ground.
+>
+> Client can:
+>
+> - browse available offers
+> - filter offers by region, district and type
+> - send a message by contact form
+>
+> Agent can:
+>
+> - add and delete offers in Contentful
+>
+> Project was created to practice all technologies used here.
+
+## Live demo [_here_]()
+
+## Table of Contents
+
+- [Technologies Used](#technologies-used)
+- [Screenshots](#screenshots)
+- [Setup](#setup)
+- [Project Status](#project-status)
+- [Room for Improvement](#room-for-improvement)
+- [License](#license)
+- [Contact](#contact)
+
+## Technologies Used
+
+- Next.js
+- MongoDB
+- Formik
+- Yup
+- Contentful
+
+## Screenshots
+
+![]()
+![]()
+
+## Setup
+
+### Getting Started
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 First, run the development server:
 
@@ -32,3 +76,23 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Project Status
+
+Project is: _in progress_
+
+## Room for Improvement
+
+- mobile view fix
+- accessibility improve
+- implement email sending
+
+## License
+
+This website was built by Wiola Polok www.u-v.codes.
+Copyright @ 2022 Wiola Polok www.u-v.codes. All Rights Reserved.
+You are allowed to use it for both personal and commercial use, but not to claim it as your own design.
+
+## Contact
+
+Created by [@Wiolinek](https://github.com/Wiolinek) - feel free to contact me!
