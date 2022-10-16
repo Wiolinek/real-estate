@@ -24,6 +24,7 @@ export async function getServerSideProps({ query }) {
 
 const OffersList = ({ offers, district }) => {
   const { labels } = useAppContext();
+  // console.log(offers)
   
 
   return ( 
@@ -46,7 +47,7 @@ const OffersList = ({ offers, district }) => {
             <div key={offer.sys.id} className={styles['single-offer']}>
                 <Offer
                     region={offer.fields?.region}
-                    district={offer.field?.district}
+                    district={offer.fields?.district}
                     size={offer.fields?.size}
                     images={offer.fields?.image?.[0]}
                 />

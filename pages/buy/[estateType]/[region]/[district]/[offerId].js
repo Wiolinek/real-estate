@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Head from 'next/head';
 import Offer from '/components/Offer'
@@ -7,53 +8,44 @@ import { getData } from '/helpers/contentful.helper';
 import styles from '/styles/Offer.module.sass';
 
 
-// export async function getStaticPaths() {
-//   const response = await fetch(`http://localhost:3000/api/offers`);
-//   const data = await response.json();
+export const getStaticPaths = async() => {
+  
+  const entries = await getData();
 
-//   const paths = data.map(offer => {
-//     return {
-//       params: {
-//         flatId: `${offer.id}`
-//       }
-//     }
-//   })
+  const paths = Array.isArray(entries?.items) && entries?.items?.map(entry => {
+    return {
+      params: {
+        offerId: entry.sys.id,
+        estateType: entry.fields.type,
+        region: entry.fields.region,
+        district: entry.fields.district
+      }
+    }
+  })
 
-//   return {
-//     paths,
-//     fallback: false,
-//   }
-// }
 
-// export async function getStaticProps(context) {
-//   const { flatId } = context.params;
-//   const response = await fetch(`http://localhost:3000/api/offers`); /* ? */
-//   const data = await response.json();
-//   const offer = await data.filter(offer => offer.id === flatId && offer);
+  return {
+    paths,
+    fallback: false,
+  }
+};
 
-//   console.log(offer)
 
-//   return {
-//     props: {
-//         offer: offer,
-//     },
-//   }
-// }
+export const getStaticProps = async(context) => {
+  const { offerId } = context.params;
 
-export async function getServerSideProps(context) {
-  const { estateType, district, region, offerId } = context.params;
-
-  const offer = await getData(estateType, region, district, offerId)
+  const offer = await getData(null, null, null, offerId)
 
   return {
     props: {
-        offer,
+        offer: offer,
     },
   }
-}
+};
 
 
 const OfferComp = ({ offer }) => {
+  const router = useRouter();
   const { labels } = useAppContext();
   const item = offer.items[0]?.fields
 
@@ -65,7 +57,8 @@ const OfferComp = ({ offer }) => {
         <meta name='' content=''/>
       </Head>
       <header>
-        <Link href='/buy'>{labels?.buttons.backToResults || ''}</Link>
+        {/* <Link href='/buy'>{labels?.buttons.backToResults || ''}</Link> */}
+        <button onClick={() => router.back()}>{labels?.buttons.backToResults || ''}</button>
         <div className={styles.contact}>
           <span>{labels?.offerPage.contact}</span>
           <span>Imię i nazwisko</span>

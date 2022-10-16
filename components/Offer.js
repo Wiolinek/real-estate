@@ -26,10 +26,10 @@ const Offer = ({ region, district, size, description, images }) => {
         <div className={styles.images}>
           {Array.isArray(images) &&
             images.map(image => image.fields?.file?.url && 
-            <Image src={`http:${image.fields?.file?.url}`} width={540} height={378} placeholder='blur' blurDataURL></Image>
+            <Image key={image?.sys?.id} src={`http:${image.fields?.file?.url}`} width={540} height={378} placeholder='blur' blurDataURL></Image>
           )}
           {(!Array.isArray(images) && images.fields?.file.url) &&
-            <Image src={`http:${images.fields?.file.url}`} width={540} height={378} placeholder='blur' blurDataURL></Image>
+            <Image key={images.sys?.id} src={`http:${images.fields?.file.url}`} width={540} height={378} placeholder='blur' blurDataURL></Image>
           }
         </div>
       </div>
