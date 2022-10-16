@@ -25,8 +25,7 @@ const clientSchema = new mongoose.Schema({
         type: String,
         required: [true, 'put your emai laddress'],
     },
-})
+}, {collection: 'clients'})
 
-// module.export = mongoose.model('Client', clientSchema);
 
 export default mongoose.models['Client'] || mongoose.model('Client', clientSchema);

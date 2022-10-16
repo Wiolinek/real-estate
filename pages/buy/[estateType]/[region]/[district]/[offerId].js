@@ -1,12 +1,10 @@
 import { useRouter } from 'next/router';
-import Image from 'next/image';
-import Link from 'next/link';
 import Head from 'next/head';
 import Offer from '/components/Offer'
-import mongodb from '/lib/mongodb';
-import OfferModel from '/pages/models/offer';
-import styles from '/styles/Offer.module.sass';
+import { useAppContext } from '/components/GlobalContext';
+import { getData } from '/helpers/contentful.helper';
 
+import styles from '/styles/Offer.module.sass';
 
 
 // export async function getStaticPaths() {
@@ -43,12 +41,9 @@ import styles from '/styles/Offer.module.sass';
 // }
 
 export async function getServerSideProps(context) {
-  const flatId = context.params.flatId;
+  const { estateType, district, region, offerId } = context.params;
 
-  mongodb();
-
-  const data = await OfferModel.findById({_id: flatId});
-  const offer = await JSON.parse(JSON.stringify(data));
+  const offer = await getData(estateType, region, district, offerId)
 
   return {
     props: {
@@ -58,22 +53,31 @@ export async function getServerSideProps(context) {
 }
 
 
-function Flat({offer}) {
+const OfferComp = ({ offer }) => {
   const router = useRouter();
-  const flatId = router.query._id;
+  const { labels } = useAppContext();
+  const item = offer.items[0].fields
+
 
   return (
     <>
       <Head>
-        <title>Details - offer ID {flatId}</title>
-        <meta name="" content=""/>
+        <title>{labels?.offerPage.title} {offer._id}</title>
+        <meta name='' content=''/>
       </Head>
       <section className={styles['filtered-results']}>
-      <button onClick={() => router.back()}>Back to results</button>
-        <Offer region={offer.region} district={offer.district} size={offer.size} description={offer.description} image={offer.image}/>
+      <button onClick={() => router.back()}>{labels?.buttons.backToResults || ''}</button>
+        <Offer
+            key={item._id}
+            region={item.region}
+            district={item.district}
+            size={item.size}
+            description={item.description.content[0].content[0].value}
+            // image={item.image}
+        />
       </section>
     </>
   )
 }
 
-export default Flat;
+export default OfferComp;

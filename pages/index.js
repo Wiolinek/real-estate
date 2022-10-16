@@ -1,23 +1,28 @@
 import Link from 'next/link';
 import Head from 'next/head';
+import { useAppContext } from '../components/GlobalContext';
+
 import styles from '/styles/Home.module.sass';
 
 
-function Home() {
+const Home = () => {
+  const { labels } = useAppContext();
+
+  
   return (
     <>
       <Head>
-        <title>Welcome!</title>
-        <meta name="" content=""/>
+        <title>{labels?.homepage.headerPrimary}</title>
+        <meta name='' content=''/>
       </Head>
       <section className={styles.main}>
         <header>
-          <h1>Welcome</h1>
-          <h2>What would you like to do?</h2>
+          <h1>{labels?.homepage.headerPrimary}</h1>
+          <h2>{labels?.homepage.headerSecondary}</h2>
         </header>
         <main>
-          <Link href="/sell">Prodat nemovitost</Link>
-          <Link href="/buy">Koupit nemovitost</Link>
+          <Link href='/sell'>{labels?.buttons.sell || ''}</Link>
+          <Link href='/buy'>{labels?.buttons.buy || ''}</Link>
         </main>
       </section>
     </>

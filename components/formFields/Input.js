@@ -1,8 +1,9 @@
 import { Field, ErrorMessage } from 'formik';
-import styles from '/styles/Sell.module.sass';
+
+import styles from '/styles/Form.module.sass';
 
 
-function Input({ label, type, name }) {
+const Input = ({ label, type, name }) => {
   
     return (
         <>
@@ -12,8 +13,9 @@ function Input({ label, type, name }) {
                     name={name}
                 >   
                 </Field> 
+                <ErrorMessage name={name} component='p' className={styles['form-error']}/>
             </label>
-            <ErrorMessage name={name} component="p" className={styles['form-error']}/>
+            
         </>
     );
   }

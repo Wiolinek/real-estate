@@ -5,14 +5,14 @@
     margin: 1rem auto .5rem auto
 
 .offers-list, .district-offers-list
-    display: flex
-    justify-content: center
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    gap: 4vw
     flex-wrap: wrap
-    padding: 1.5rem
+    // width: 100%
+    // padding: 1.5rem
   
 .single-offer
-    width: 25vw
-    margin: 2rem
     padding: 1rem
     background-color: rgba(211, 206, 206, .7)
   

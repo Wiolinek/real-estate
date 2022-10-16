@@ -11,10 +11,9 @@ const filterSchema = new mongoose.Schema({
     },
     district: {
         type: String,
-        required: [true, 'choose the ditrict'],
+        required: [true, 'choose the district'],
     },
 })
 
-// module.export = mongoose.model('Filter', filterSchema);
 
 export default mongoose.models['Filter'] || mongoose.model('Filter', filterSchema);

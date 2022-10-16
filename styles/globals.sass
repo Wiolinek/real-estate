@@ -4,6 +4,16 @@
   box-sizing: border-box
   font-family: 'PT Sans', sans-serif
 
+header
+  display: flex
+  justify-content: space-between
+  align-items: center
+  width: 100%
+  min-height: 20vh
+  padding: 0 8vw
+  background-color: white
+  text-align: center
+
 section
   width: 100vw
   min-height: 95vh
@@ -13,13 +23,12 @@ section
   header
     flex-direction: column
 
-section header, section main
+section main
   display: flex
   justify-content: space-evenly
   width: 100%
   min-width: 300px
   text-align: center
-  padding: 1.7em
 
 section header h1, section main h1
   font-size: 3rem
@@ -33,6 +42,10 @@ section header h2, section main h2
   line-height: 1.5em
   text-shadow: 1px 1px 1px grey
   letter-spacing: .03em
+
+main
+  min-height: 75vh
+  padding: 2em 8vw
 
 button, a
   height: 70px
@@ -71,6 +84,9 @@ footer
   display: flex
   justify-content: center
   align-items: center
+
+select, input
+  cursor: pointer
 
 @media (max-width: 460px)
   *

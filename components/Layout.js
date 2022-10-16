@@ -1,12 +1,12 @@
 import Footer from './Footer';
 
-function Layout({children}) {
+const Layout = ({ children }) => {
   
   return (
-    <section>
+    <>
       {children}
       <Footer />
-    </section>
+    </>
   );
 }
 

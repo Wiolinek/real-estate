@@ -1,12 +1,18 @@
 import Layout from '/components/Layout';
+import { Context } from '/components/GlobalContext';
+
 import '/styles/globals.sass';
 
 
-function MyApp({ Component, pageProps }) {
+const MyApp = ({ Component, pageProps }) => {
+
+
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <Context >
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </Context>
   )
 }
 

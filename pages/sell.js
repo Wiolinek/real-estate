@@ -1,53 +1,80 @@
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
-import Form from '/components/Form';
-import { useState } from 'react';
-import Region from '/pages/models/region';
+import Form from '/components/SellForm';
+import { useAppContext } from '../components/GlobalContext';
+// import Client from '/pages/api/models/client';
+// const Client = require('/pages/api/models/client')
 import mongodb from '/lib/mongodb';
-import styles from '/styles/Sell.module.sass';
+import { districtHandler } from '../helpers/form.helper';
+import { variables } from '../utils/globals'
+// import { districtHandler } from '../helpers/form.helper';
+import styles from '/styles/Form.module.sass';
 
 
-export async function getStaticProps() {
+// export async function getStaticProps() {
 
-  mongodb();
+//   mongodb();
 
-  const data = await Region.find();
-  const regions = await JSON.parse(JSON.stringify(data));
+//   const data = await Region.find();
+//   const regions = await JSON.parse(JSON.stringify(data));
 
-  return {
-    props: {
-        regions,
-    },
-  }
-}
+//   return {
+//     props: {
+//         regions,
+//     },
+//   }
+// }
 
 
-function Sell({ regions }) {
-
-  const estateTypes = ['Byt', 'Dům', 'Pozemek'];
-  const [regionsState, setRegionsState] = useState(Array.from(new Set(regions.map(region => region.region))));
+const Sell = () => {
+  const { regions, labels } = useAppContext();
   const [districtsState, setDistrictsState] = useState();
-
-  const setDistrictHandler = e => {
-    setDistrictsState(regions.filter(region => region.region === e.currentTarget.value && region.district).map(region => region.district));
-};
+  const [chosenRegion, setChosenRegion] = useState(variables.defaultValue);
+  const [chosenDistrict, setChosenDistrict] = useState(variables.defaultValue);
+  const [chosenEstateType, setChosenEstateType] = useState(variables.defaultValue);
   
+  const sendToDB = (data) => {
+    mongodb();
+    // db.collection('clients').insertOne(data)
+    // console.log(data)
+    // await Client.insertOne(data);
+    // await Client.create(data);
+
+    const newClient = new Client(data);
+    newClient.save();
+  }
+
+  useEffect(() => {
+    setDistrictsState(districtHandler(chosenRegion, regions));
+  }, [chosenRegion])
+
 
   return (
     <>  
       <Head>
-        <title>SELL something!</title>
-        <meta name="" content=""/>
+        <title>{labels?.sellPage.title}</title>
+        <meta name='' content=''/>
       </Head>
-      <section className={styles.sale}>
+      <section className={styles.form}>
         <header>
-          <h1>Chcete prodát svoji nemovitost?</h1>
+          <h1>{labels?.sellPage.header}</h1>
         </header>
         <main>
-          <p className={styles.text}>Najdeme vám makléře, který všechno pro vás zaridi. Správně nafoti, naceni a zainzeruje. Stačí jen vyplnit nas krátký formulář o nemovitosti a hned vas budeme kontaktovat.
-          </p>
-          <Link href="/">Zpet</Link>
-          <Form estateTypes={estateTypes} regionsState={regionsState} districtsState={districtsState} setDistrictHandler={setDistrictHandler} />
+          <article>
+            <p className={styles.text}>{labels?.sellPage.text}</p>
+            <Link href='/'>{labels?.buttons.back || ''}</Link>
+          </article>
+          <Form
+            districtsState={districtsState}
+            chosenRegion={chosenRegion}
+            chosenDistrict={chosenDistrict}
+            chosenEstateType={chosenEstateType}
+            setChosenDistrict={setChosenDistrict}
+            setChosenRegion={setChosenRegion}
+            setChosenEstateType={setChosenEstateType}
+            sendToDB={sendToDB}
+          />
         </main>
       </section>
     </>
