@@ -56,27 +56,25 @@ const Sell = () => {
         <title>{labels?.sellPage.title || ''}</title>
         <meta name='' content=''/>
       </Head>
-      <section className={styles.form}>
-        <header>
-          <h1>{labels?.sellPage.header}</h1>
-        </header>
-        <main>
-          <article>
-            <p className={styles.text}>{labels?.sellPage.text}</p>
-            <Link href='/'>{labels?.buttons.back || ''}</Link>
-          </article>
-          <Form
-            districtsState={districtsState}
-            chosenRegion={chosenRegion}
-            chosenDistrict={chosenDistrict}
-            chosenEstateType={chosenEstateType}
-            setChosenDistrict={setChosenDistrict}
-            setChosenRegion={setChosenRegion}
-            setChosenEstateType={setChosenEstateType}
-            sendToDB={sendToDB}
-          />
-        </main>
-      </section>
+      <header className={styles.form}>
+        <h1>{labels?.sellPage.header}</h1>
+      </header>
+      <main className={styles.form}>
+        <article>
+          <p className={styles.text}>{labels?.sellPage.text}</p>
+          <Link href='/'>{labels?.buttons.back || ''}</Link>
+        </article>
+        <Form
+          districtsState={districtsState}
+          chosenRegion={chosenRegion}
+          chosenDistrict={chosenDistrict}
+          chosenEstateType={chosenEstateType}
+          setChosenDistrict={setChosenDistrict}
+          setChosenRegion={setChosenRegion}
+          setChosenEstateType={setChosenEstateType}
+          sendToDB={sendToDB}
+        />
+      </main>
     </>
   )
 }

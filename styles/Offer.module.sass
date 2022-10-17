@@ -31,22 +31,36 @@
 .single-offer
     padding: 1rem
     background-color: rgba(211, 206, 206, .7)
+    border-radius: 6px
   
 .filtered-results .offer
     min-height: 70%
     padding: 2rem
     background-color: rgba(211, 206, 206, .7)
+    border-radius: 6px
 
 .filtered-results .offer .description, .contact
     font-size: 1.2rem
     line-height: 1.6
-    margin: 3.6rem 0
+
+.filtered-results .description
+    margin: 1.8rem 0 3.6rem 0
+    padding-top: 1.8rem
+    border-top: 1px solid grey
+    text-align: left
+
+.filtered-results .description h3
+    margin-bottom: 6px
+
+.filtered-results .description h3:not(:first-child)
+    margin-top: 14px
 
 .contact
     display: flex
     column-gap: 1rem
     align-items: flex-end
     justify-content: space-between
+    margin: 3.6rem 0
 
 .contact *:not(:first-child)
     font-size: 1.1rem

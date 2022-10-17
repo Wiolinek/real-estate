@@ -27,11 +27,10 @@ const Buy = () => {
         <title>{labels?.buyPage.title || ''}</title>
         <meta name='' content=''/>
       </Head>
-      <section className={styles.form}>
-        <header>
+        <header className={styles.form}>
           <h1>{labels?.buyPage.header}</h1>
         </header>
-        <main>
+        <main className={styles.form}>
           <article>
             <p>{labels?.buyPage.text}</p>
             <Link href='/'>{labels?.buttons.back || ''}</Link>
@@ -46,7 +45,6 @@ const Buy = () => {
             setChosenEstateType={setChosenEstateType}
           />
         </main>
-      </section>
     </>
   );
 }

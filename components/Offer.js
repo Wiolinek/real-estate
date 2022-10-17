@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { useAppContext } from '../components/GlobalContext';
 
 import styles from '/styles/Offer.module.sass';
@@ -20,9 +21,9 @@ const Offer = ({ region, district, size, description, images }) => {
         </div>
         <div className={styles.detail}>
           <span>{labels?.offerPage.size}</span>
-          <span>{size} m2</span>
+          <span>{size} m<sup>2</sup></span>
         </div>
-        <p className={styles.description}>{description}</p>
+        <div className={styles.description}>{documentToReactComponents(description)}</div>
         <div className={styles.images}>
           {Array.isArray(images) &&
             images.map(image => image.fields?.file?.url && 

@@ -24,7 +24,6 @@ export async function getServerSideProps({ query }) {
 
 const OffersList = ({ offers, district }) => {
   const { labels } = useAppContext();
-  // console.log(offers)
   
 
   return ( 
@@ -37,7 +36,6 @@ const OffersList = ({ offers, district }) => {
         <Link href='/buy'>{labels?.buttons.backToSearch || ''}</Link>
         <div>{labels?.resultsPage.found} {offers?.length || 0} {labels?.resultsPage.match}</div>
       </header>
-        
       <main>
         <div className={styles['district-offers-list']}>
           {(Array.isArray(offers) && offers.length < 1) && 

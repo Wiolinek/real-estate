@@ -61,19 +61,20 @@ const OfferComp = ({ offer }) => {
         <button onClick={() => router.back()}>{labels?.buttons.backToResults || ''}</button>
         <div className={styles.contact}>
           <span>{labels?.offerPage.contact}</span>
-          <span>Imię i nazwisko</span>
-          <span>Telefon</span>
-          <span>Email</span>
+          <span>{item?.agentName}</span>
+          <span>|</span>
+          <span>{item?.contactNumber}</span>
+          <span>|</span>
+          <span>{item?.contactEmail}</span>
         </div>
       </header>
       <main className={styles['filtered-results']}>
-      
         <Offer
             key={offer.items[0]?.sys.id}
             region={item?.region}
             district={item?.district}
             size={item?.size}
-            description={item?.description.content[0].content[0].value}
+            description={item?.description}
             images={item?.image}
         />
       </main>
