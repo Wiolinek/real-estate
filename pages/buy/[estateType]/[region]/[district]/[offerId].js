@@ -54,7 +54,8 @@ const OfferComp = ({ offer }) => {
     <>
       <Head>
         <title>{labels?.offerPage.title || ''}{offer.items[0]?.sys.id}</title>
-        <meta name='' content=''/>
+        <meta name='description' content={`${item?.typet} in ${item?.district} ${labels?.resultsPage.metaDescription}`}/>
+        <link rel='icon' href='/logo.svg' />
       </Head>
       <header>
         {/* <Link href='/buy'>{labels?.buttons.backToResults || ''}</Link> */}

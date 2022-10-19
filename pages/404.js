@@ -1,21 +1,36 @@
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
+import { useAppContext } from '../components/GlobalContext';
+
+import styles from '/styles/Basic.module.sass';
 
 
 const NotFound = () => {
+  const { regions, labels } = useAppContext();
   const router = useRouter();
 
   useEffect(() => {
     setTimeout(() => {
       router.push('/');
-    }, 3000)
+    }, 4000)
   }, [])
 
   
   return (
-    <div>
-      Nic tady neni, asi chyba
-    </div>
+    <>  
+      <Head>
+        <title>{labels?.errorPage.title || ''}</title>
+        <meta name='description' content={labels?.errorPage.metaDescripion}/>
+        <link rel='icon' href='/logo.svg' />
+      </Head>
+      <header className={styles.basic}>
+        <h1>{labels?.errorPage.header}</h1>
+      </header>
+      <main className={styles.basic}>
+        <p>{labels?.errorPage.redirectionMessage}</p>
+      </main>
+    </>
   )
 }
 

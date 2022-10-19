@@ -30,29 +30,33 @@ const OffersList = ({ offers, district }) => {
     <>
       <Head>
         <title>{labels?.resultsPage.title || ''}{district}</title>
-        <meta name='' content=''/>
+        <meta name='description' content={labels?.resultsPage.metaDescription}/>
+        <link rel='icon' href='/logo.svg' />
       </Head>
-      <header>
+      <header className={styles['district-offers-list-header']}>
         <Link href='/buy'>{labels?.buttons.backToSearch || ''}</Link>
-        <div>{labels?.resultsPage.found} {offers?.length || 0} {labels?.resultsPage.match}</div>
+        <div>{labels?.resultsPage.found} <span>{offers?.length || 0}</span> {labels?.resultsPage.match}</div>
       </header>
-      <main>
-        <div className={styles['district-offers-list']}>
-          {(Array.isArray(offers) && offers.length < 1) && 
-            <div>{labels?.resultsPage.noResults}</div>
-          }
-          {Array.isArray(offers) && offers.map(offer => 
-            <div key={offer.sys.id} className={styles['single-offer']}>
-                <Offer
-                    region={offer.fields?.region}
-                    district={offer.fields?.district}
-                    size={offer.fields?.size}
-                    images={offer.fields?.image?.[0]}
-                />
-              <Link href={`/buy/${offer.fields.type}/${offer.fields.region}/${offer.fields.district}/${offer.sys.id}`}>{labels?.buttons.more || ''}</Link>
-            </div>
-          )}
-        </div>
+      <main className={styles['district-offers']}>
+        {(Array.isArray(offers) && offers.length < 1) && 
+          <div>{labels?.resultsPage.noResults}</div>
+        }
+        {(Array.isArray(offers) && offers.length > 0) && 
+          <ul className={styles['district-offers-list']}>
+              {offers.map(offer => 
+                <li key={offer.sys.id} className={styles['single-offer']}>
+                    <Offer
+                        type={offer.fields?.type}
+                        region={offer.fields?.region}
+                        district={offer.fields?.district}
+                        size={offer.fields?.size}
+                        images={offer.fields?.image?.[0]}
+                    />
+                  <Link href={`/buy/${offer.fields.type}/${offer.fields.region}/${offer.fields.district}/${offer.sys.id}`}>{labels?.buttons.more || ''}</Link>
+                </li>
+              )}
+          </ul>
+        }
       </main>
     </>
   )

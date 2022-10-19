@@ -2,21 +2,23 @@
   margin: 0
   padding: 0
   box-sizing: border-box
+  font-size: 16px
   font-family: 'PT Sans', sans-serif
+  letter-spacing: .2px
 
 header
   display: flex
   justify-content: space-between
   align-items: center
   width: 100%
-  min-height: 20vh
-  padding: 0 8vw
+  min-height: 19vh
+  padding: 3vh 8vw 1vh
   background-color: white
   text-align: center
 
 section
   width: 100vw
-  min-height: 95vh
+  min-height: 94vh
   display: flex
   flex-direction: column
   align-items: center
@@ -24,20 +26,17 @@ section
 main
   display: flex
   justify-content: space-evenly
+  min-height: 75vh
   width: 100%
   min-width: 300px
   text-align: center
-  
-main
-  min-height: 75vh
   padding: 2em 8vw
-
+  
 button, a
   height: 70px
   border: 1px solid black
   border-radius: 45px
   font-size: 1.5rem
-  letter-spacing: 0.05em
   text-decoration: none
   display: flex
   justify-content: center
@@ -62,13 +61,14 @@ button[type=submit]:hover
   border: 1px solid white
 
 footer
-  height: 5vh
+  height: 6vh
   width: 100vw
   color: white
   background-color: black
   display: flex
   justify-content: center
   align-items: center
+  padding: 0 8vw
 
 select, input
   cursor: pointer
@@ -76,7 +76,6 @@ select, input
 h1
   font-size: 3rem
   text-shadow: 1px 1px 1px grey
-  letter-spacing: .04em
 
 h2
   width: 100%
@@ -84,29 +83,33 @@ h2
   font-weight: 400
   line-height: 1.5em
   text-shadow: 1px 1px 1px grey
-  letter-spacing: .03em
 
 h3
   font-size: 1.4rem
 
-@media (max-width: 460px)
-  *
-    font-size: 14px
-  button, a
-    width: 200px
-
-@media (min-width: 461px)
-  button, a
-    width: 270px
-
-@media (max-width: 640px)
-  main
-    flex-direction: column
-
-@media (min-width: 641px)
-  *
-    font-size: 16px
 
 @media (min-width: 1024px)
   button, a
     width: 300px
+    min-width: 300px
+
+@media (max-width: 1240px)
+
+@media (max-width: 1024px)
+  button, a
+    width: 270px
+    min-width: 270px
+    height: 60px
+
+@media (max-width: 768px)
+
+@media (max-width: 640px)
+  main
+    flex-direction: column
+    padding: 2em 3vw
+    
+@media (max-width: 576px)
+  *
+    font-size: 14px
+  button, a
+    width: 200px

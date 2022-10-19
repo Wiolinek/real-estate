@@ -16,11 +16,18 @@
     gap: 2vw
     flex-wrap: wrap
 
+.district-offers-list-header
+    justify-content: space-between
+
+.district-offers-list-header span
+    font-size: 1.1rem
+    font-weight: 700
+
 .offers-list, .district-offers-list
     display: grid
     grid-template-columns: repeat(3, 1fr)
     gap: 4vw
-    flex-wrap: wrap
+    list-style: none
 
 .district-offers-list .single-offer
     transition: all .5s
@@ -65,4 +72,39 @@
 .contact *:not(:first-child)
     font-size: 1.1rem
     font-weight: 700
-    
+     
+.imageContainer
+    max-width: 540px !important
+    height: 360px
+
+.imageContainer > span
+    position: unset !important
+    height: 360px !important
+  
+.image
+    object-fit: cover
+    width: 100% !important
+    position: relative !important
+    height: unset !important
+
+@media (max-width: 1240px)
+    .offers-list, .district-offers-list
+        grid-template-columns: repeat(2, 1fr)
+    .imageContainer
+        max-width: 360px !important
+        height: 300px
+    .imageContainer > span
+        height: 300px !important
+
+@media (max-width: 768px)
+    .offers-list, .district-offers-list
+        grid-template-columns: repeat(1, 1fr)
+    .district-offers-list-header
+        flex-direction: column
+    .imageContainer
+        max-width: 300px !important
+        height: 250px
+    .imageContainer > span
+        height: 250px !important
+    main.district-offers
+        flex-direction: unset

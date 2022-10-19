@@ -1,6 +1,8 @@
 {
     "labels": {
         "homepage": {
+            "title": "Welcome!",
+            "metaDescription": "Real Estate Company - Welcome page",
             "headerPrimary": "Welcome!",
             "headerSecondary": "What would you like to do?"
         },
@@ -16,26 +18,38 @@
         },
         "sellPage": {
             "title": "SELL something!",
+            "metaDescription": "Real Estate Company - Selling form page",
             "header":"Do you want to sell your property?",
             "text": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint perspiciatis recusandae libero architecto officiis, consequuntur enim eligendi inventore assumenda hic esse a aliquam ratione veritatis aliquid itaque pariatur incidunt saepe ipsam est repudiandae numquam alias. Tempore corrupti maxime commodi illo exercitationem doloremque consequuntur sequi enim, maiores voluptatum nulla, voluptatibus sapiente, debitis illum ut. Repellendus eligendi aspernatur eveniet accusantium. Vitae eos quisquam, voluptatum molestias alias facilis neque magnam impedit! Voluptatibus provident ipsam, laborum ducimus minima, accusantium ab est explicabo commodi aperiam dolorum! Dolorem cupiditate repellat quisquam veritatis neque? Eligendi corrupti aut exercitationem, nihil esse aperiam distinctio! Voluptates architecto ut quam! Natus!"
         },
         "buyPage": {
             "title": "BUY something!",
+            "metaDescription": "Real Estate Company - Estates filter page",
             "header":"Do you want to buy a property?",
             "text": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint perspiciatis recusandae libero architecto officiis, consequuntur enim eligendi inventore assumenda hic esse a aliquam ratione veritatis aliquid itaque pariatur incidunt saepe ipsam est repudiandae numquam alias. Tempore corrupti maxime commodi illo exercitationem doloremque consequuntur sequi enim, maiores voluptatum nulla, voluptatibus sapiente, debitis illum ut. Repellendus eligendi aspernatur eveniet accusantium. Vitae eos quisquam, voluptatum molestias alias facilis neque magnam impedit! Voluptatibus provident ipsam, laborum ducimus minima, accusantium ab est explicabo commodi aperiam dolorum! Dolorem cupiditate repellat quisquam veritatis neque? Eligendi corrupti aut exercitationem, nihil esse aperiam distinctio! Voluptates architecto ut quam! Natus!"
         },
         "resultsPage": {
             "title": "Your results - ",
+            "metaDescription": "Real Estate Company - Houses, flats and land for sale",
             "noResults": "There are no offers matching your search criteria. Change your criteria and try again.",
             "found": "We found",
             "match": "offers matching your criteria."
         },
         "offerPage": {
             "title": "Details - offer ID - ",
+            "metaDescription": "- offer details",
+            "districtMeta": "district",
             "region": "Region:",
             "district": "District:",
             "size": "Size:",
-            "contact": "Contact:"
+            "contact": "Contact:",
+            "alt": "for sale"
+        },
+        "errorPage": {
+            "title": "Page not found",
+            "metaDescription": "404 Error - Page not found",
+            "header": "Page not found",
+            "redirectionMessage": "Yoy will be automaticaly redirected to the homepage"
         },
         "form": {
             "estateType":"Estate type:",
