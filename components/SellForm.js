@@ -36,7 +36,8 @@ const FormComp = ({ districtsState, sendToDB, setChosenDistrict, setChosenRegion
         region: Yup.string().required(labels?.formErrors.region),
         district: Yup.string().required(labels?.formErrors.district),
         name: Yup.string().required(labels?.formErrors.name)
-            .min(2, labels?.formErrors.nameLenght),
+            .min(2, labels?.formErrors.nameLenght)
+            .matches(/^[a-zA-Z]+[ ][a-zA-Z]+/, labels?.formErrors.nameMatch),
         phone: Yup.string()
             .required(labels?.formErrors.phone)
             .min(12, labels?.formErrors.phoneLenght)
@@ -85,7 +86,6 @@ const FormComp = ({ districtsState, sendToDB, setChosenDistrict, setChosenRegion
                     type='select'
                     name='region'
                     options={regions}
-                    // changeHandler={e => setDistrictsState(districtHandler(e, regions))}
                     changeHandler={e => {
                         setChosenRegion(e.target.selectedOptions[0].value)
                         formik.handleChange(e)
