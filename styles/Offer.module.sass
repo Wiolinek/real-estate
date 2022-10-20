@@ -1,110 +1,124 @@
-.offer .detail span:last-child, .single-offer .detail span:last-child
-    font-size: 1.1rem
-    font-weight: 700
-    
-.offer a, .single-offer a
-    margin: 1rem auto .5rem auto
+.district-offers-list-header
+    justify-content: space-between
+    span
+        font-size: 1.1rem
+        font-weight: 700
+
+.offers-list,
+.district-offers-list
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    gap: 4vw
+    list-style: none
+
+.district-offers-list
+    .single-offer
+        padding: 1rem
+        background-color: rgba(211, 206, 206, .7)
+        border-radius: 6px
+        transition: all .5s
+        &:hover
+            transform: scale(1.04)
+
+header.filtered-result
+    gap: 4vw
+
+.filtered-result
+    .contact
+        display: flex
+        column-gap: 1rem
+        align-items: flex-end
+        justify-content: space-between
+        margin: 3.6rem 0
+        font-size: 1.2rem
+        line-height: 1.6
+        & *:not(:first-child)
+            font-size: 1.1rem
+            font-weight: 700
+    .offer
+        min-height: 70%
+        padding: 2rem
+        background-color: rgba(211, 206, 206, .7)
+        border-radius: 6px
+        .description
+            margin: 1.8rem 0 3.6rem 0
+            padding-top: 1.8rem
+            border-top: 1px solid grey
+            text-align: left
+            font-size: 1.2rem
+            line-height: 1.6
+            h3
+                margin-bottom: 6px
+                &:not(:first-child)
+                    margin-top: 14px
+        .images
+            display: grid
+            grid-template-columns: repeat(auto-fit, minmax(540px, .33fr))
+            justify-content: space-around
+            row-gap: 4vw
 
 .detail
     display: flex
     column-gap: 10px
     align-items: center
     margin: .8rem 0
+    span:last-child
+        font-size: 1.1rem
+        font-weight: 700
 
-.images
-    display: flex
-    gap: 2vw
-    flex-wrap: wrap
-
-.district-offers-list-header
-    justify-content: space-between
-
-.district-offers-list-header span
-    font-size: 1.1rem
-    font-weight: 700
-
-.offers-list, .district-offers-list
-    display: grid
-    grid-template-columns: repeat(3, 1fr)
-    gap: 4vw
-    list-style: none
-
-.district-offers-list .single-offer
-    transition: all .5s
-
-.district-offers-list .single-offer:hover
-    transform: scale(1.04)
-  
-.single-offer
-    padding: 1rem
-    background-color: rgba(211, 206, 206, .7)
-    border-radius: 6px
-  
-.filtered-results .offer
-    min-height: 70%
-    padding: 2rem
-    background-color: rgba(211, 206, 206, .7)
-    border-radius: 6px
-
-.filtered-results .offer .description, .contact
-    font-size: 1.2rem
-    line-height: 1.6
-
-.filtered-results .description
-    margin: 1.8rem 0 3.6rem 0
-    padding-top: 1.8rem
-    border-top: 1px solid grey
-    text-align: left
-
-.filtered-results .description h3
-    margin-bottom: 6px
-
-.filtered-results .description h3:not(:first-child)
-    margin-top: 14px
-
-.contact
-    display: flex
-    column-gap: 1rem
-    align-items: flex-end
-    justify-content: space-between
-    margin: 3.6rem 0
-
-.contact *:not(:first-child)
-    font-size: 1.1rem
-    font-weight: 700
-     
 .imageContainer
     max-width: 540px !important
     height: 360px
+    > span
+        position: unset !important
+        height: 360px !important
+    .image
+        object-fit: cover
+        width: 100% !important
+        position: relative !important
+        height: unset !important
 
-.imageContainer > span
-    position: unset !important
-    height: 360px !important
-  
-.image
-    object-fit: cover
-    width: 100% !important
-    position: relative !important
-    height: unset !important
+.offer a,
+.single-offer a
+    margin: 1rem auto .5rem auto
+
 
 @media (max-width: 1240px)
-    .offers-list, .district-offers-list
+    .offers-list,
+    .district-offers-list
         grid-template-columns: repeat(2, 1fr)
     .imageContainer
         max-width: 360px !important
         height: 300px
-    .imageContainer > span
-        height: 300px !important
+        > span
+            height: 300px !important
+
+@media (max-width: 992px)
+    header.filtered-result
+        justify-content: center
+        flex-wrap: wrap
+    .contact
+        margin: 0
 
 @media (max-width: 768px)
-    .offers-list, .district-offers-list
-        grid-template-columns: repeat(1, 1fr)
     .district-offers-list-header
         flex-direction: column
+    main.district-offers
+        flex-direction: unset
+    .offers-list,
+    .district-offers-list
+        grid-template-columns: repeat(1, 1fr)
+    header.filtered-result
+        flex-direction: column
+    .contact
+        align-self: flex-end
+        flex-direction: column
+        span
+            display: none
     .imageContainer
         max-width: 300px !important
         height: 250px
-    .imageContainer > span
-        height: 250px !important
-    main.district-offers
-        flex-direction: unset
+        > span
+            height: 250px !important
+
+  
