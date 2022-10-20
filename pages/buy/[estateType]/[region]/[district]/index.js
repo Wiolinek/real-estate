@@ -31,7 +31,6 @@ const OffersList = ({ offers, district }) => {
       <Head>
         <title>{labels?.resultsPage.title || ''}{district}</title>
         <meta name='description' content={labels?.resultsPage.metaDescription}/>
-        <link rel='icon' href='/logo.svg' />
       </Head>
       <header className={styles['district-offers-list-header']}>
         <Link href='/buy'>{labels?.buttons.backToSearch || ''}</Link>

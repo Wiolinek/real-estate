@@ -26,7 +26,6 @@ const Buy = () => {
       <Head>
         <title>{labels?.buyPage.title || ''}</title>
         <meta name='description' content={labels?.buyPage.metaDescription}/>
-        <link rel='icon' href='/logo.svg' />
       </Head>
         <header className={styles.form}>
           <h1>{labels?.buyPage.header}</h1>

@@ -55,7 +55,6 @@ const Sell = () => {
       <Head>
         <title>{labels?.sellPage.title || ''}</title>
         <meta name='description' content={labels?.sellPage.metaDescription}/>
-        <link rel='icon' href='/logo.svg' />
       </Head>
       <header className={styles.form}>
         <h1>{labels?.sellPage.header}</h1>

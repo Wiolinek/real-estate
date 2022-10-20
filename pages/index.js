@@ -14,7 +14,6 @@ const Home = () => {
       <Head>
         <title>{labels?.homepage.title || ''}</title>
         <meta name='description' content={labels?.homepage.metaDescription}/>
-        <link rel='icon' href='/logo.svg' />
       </Head>
       <header className={styles.basic}>
         <h1>{labels?.homepage.headerPrimary}</h1>

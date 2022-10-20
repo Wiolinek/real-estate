@@ -22,7 +22,6 @@ const NotFound = () => {
       <Head>
         <title>{labels?.errorPage.title || ''}</title>
         <meta name='description' content={labels?.errorPage.metaDescripion}/>
-        <link rel='icon' href='/logo.svg' />
       </Head>
       <header className={styles.basic}>
         <h1>{labels?.errorPage.header}</h1>
