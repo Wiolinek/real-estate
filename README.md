@@ -83,8 +83,6 @@ Project is: _in progress_
 
 ## Room for Improvement
 
-- mobile view fix
-- accessibility improve
 - implement email sending
 
 ## License
