@@ -33,7 +33,8 @@
             "metaDescription": "Real Estate Company - Houses, flats and land for sale",
             "noResults": "There are no offers matching your search criteria. Change your criteria and try again.",
             "found": "We found",
-            "match": "offers matching your criteria."
+            "match": "offers matching your criteria.",
+            "matchOne": "offer matching your criteria."
         },
         "offerPage": {
             "title": "Details - offer ID - ",

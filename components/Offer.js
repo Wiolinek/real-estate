@@ -24,30 +24,26 @@ const Offer = ({ type, region, district, size, description, images }) => {
           <span>{size} m<sup>2</sup></span>
         </div>
         <div className={styles.description}>{documentToReactComponents(description)}</div>
-        <div className={styles.images}>
+        <ul className={styles.images}>
           {Array.isArray(images) &&
             images.map(image => image.fields?.file?.url &&
-              <div className={styles.imageContainer}>
+              <li className={styles.imageContainer} key={image?.sys?.id}>
                 <Image
-                  key={image?.sys?.id}
                   src={`http:${image.fields?.file?.url}`}
                   alt={`${type} ${labels?.offerPage.alt} in ${district} ${labels?.offerPage.districtMeta}`}
                   className={styles.image}
                   layout='fill'
                   objectFit='cover'        
-                  width={540}
-                  height={378}
                   placeholder='blur'
                   blurDataURL
                 >
                 </Image>
-              </div>
+              </li>
             
           )}
           {(!Array.isArray(images) && images.fields?.file.url) &&
-            <div className={styles.imageContainer}>
+            <li className={styles.imageContainer} key={images.sys?.id}>
               <Image
-                key={images.sys?.id}
                 src={`http:${images.fields?.file.url}`}
                 alt={`${type} ${labels?.offerPage.alt} in ${district} ${labels?.offerPage.districtMeta}`}
                 className={styles.image}
@@ -57,9 +53,9 @@ const Offer = ({ type, region, district, size, description, images }) => {
                 blurDataURL
               >
               </Image>
-            </div>
+            </li>
           }
-        </div>
+        </ul>
       </div>
     </>
   )

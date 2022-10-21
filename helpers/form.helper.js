@@ -1,7 +1,7 @@
-export const districtHandler = (chosenRegion, regions) => {
+export const generateDistricts = (chosenRegion, regions) => {
 
     return Array.isArray(regions) && 
-        regions?.filter(region => region?.region === chosenRegion && region.district).map(region => region.district)
+        Array.from(new Set(regions?.filter(region => region?.region === chosenRegion && region.district).map(region => region.district)))
 };
 
 

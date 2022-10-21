@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import Form from '/components/BuyForm'
 import { useAppContext } from '/components/GlobalContext';
-import { districtHandler } from '/helpers/form.helper';
+import { generateDistricts } from '/helpers/form.helper';
 import { variables } from '/utils/globals';
 
 import styles from '/styles/Form.module.sass';
@@ -17,7 +17,7 @@ const Buy = () => {
   const [chosenEstateType, setChosenEstateType] = useState(variables.defaultValue);
 
   useEffect(() => {
-    setDistrictsState(districtHandler(chosenRegion, regions));
+    setDistrictsState(generateDistricts(chosenRegion, regions));
   }, [chosenRegion])
 
   

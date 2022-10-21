@@ -8,7 +8,6 @@ const MyDocument = () => {
     <Html>
       <Head lang='en'>
         <link rel='icon' href='/logo.svg' />
-
       </Head>
       <body>
         <Main/>

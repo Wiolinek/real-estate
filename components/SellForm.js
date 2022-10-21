@@ -2,6 +2,7 @@ import { Formik, Form, useFormik } from 'formik';
 import * as Yup from 'yup';
 import FormFieldControler from './FormFieldControler';
 import { useAppContext } from '../components/GlobalContext';
+import { listHandler } from '/helpers/list.helper';
 // import Client from '/lib/models/client';
 // import mongodb from '/lib/mongodb';
 
@@ -85,7 +86,7 @@ const FormComp = ({ districtsState, sendToDB, setChosenDistrict, setChosenRegion
                     as='select'
                     type='select'
                     name='region'
-                    options={regions}
+                    options={listHandler(regions, 'region')}
                     changeHandler={e => {
                         setChosenRegion(e.target.selectedOptions[0].value)
                         formik.handleChange(e)

@@ -34,7 +34,7 @@ const OffersList = ({ offers, district }) => {
       </Head>
       <header className={styles['district-offers-list-header']}>
         <Link href='/buy'>{labels?.buttons.backToSearch || ''}</Link>
-        <div>{labels?.resultsPage.found} <span>{offers?.length || 0}</span> {labels?.resultsPage.match}</div>
+        <div>{labels?.resultsPage.found} <span>{offers?.length || 0} </span>{offers?.length === 1 ? labels?.resultsPage.matchOne : labels?.resultsPage.match}</div>
       </header>
       <main className={styles['district-offers']}>
         {(Array.isArray(offers) && offers.length < 1) && 

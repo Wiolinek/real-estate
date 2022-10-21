@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { listHandler } from '/helpers/context.helper';
+import { listHandler } from '/helpers/list.helper';
 
 
 const GlobalContext = createContext({})
@@ -43,14 +43,11 @@ export const Context = ({ children }) => {
         fetchData();
     }, [])
 
-    const regionsList = listHandler(regions, 'region')
-    const districtsList = listHandler(regions, 'district')
-    // .map(district => { return { district: district.district, region: district.region } })
+
     const estateTypesList = listHandler(regions, 'type')
 
     const providedValues = {
-        regions: regionsList,
-        districts: districtsList,
+        regions,
         estateTypes: estateTypesList,
         labels
     }

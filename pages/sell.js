@@ -6,9 +6,8 @@ import { useAppContext } from '../components/GlobalContext';
 // import Client from '/pages/api/models/client';
 // const Client = require('/pages/api/models/client')
 import mongodb from '/lib/mongodb';
-import { districtHandler } from '../helpers/form.helper';
+import { generateDistricts } from '/helpers/form.helper'
 import { variables } from '../utils/globals'
-// import { districtHandler } from '../helpers/form.helper';
 import styles from '/styles/Form.module.sass';
 
 
@@ -46,7 +45,7 @@ const Sell = () => {
   }
 
   useEffect(() => {
-    setDistrictsState(districtHandler(chosenRegion, regions));
+    setDistrictsState(generateDistricts(chosenRegion, regions));
   }, [chosenRegion])
 
 
