@@ -55,23 +55,23 @@ const OfferComp = ({ offer }) => {
       <Head>
         <title>{labels?.offerPage.title || ''}{offer.items[0]?.sys.id}</title>
         <meta name='description' content={`${item?.typet} in ${item?.district} ${labels?.resultsPage.metaDescription}`}/>
-        <link rel='icon' href='/logo.svg' />
       </Head>
-      <header>
+      <header className={styles['filtered-result']}>
         {/* <Link href='/buy'>{labels?.buttons.backToResults || ''}</Link> */}
         <button onClick={() => router.back()}>{labels?.buttons.backToResults || ''}</button>
         <div className={styles.contact}>
-          <span>{labels?.offerPage.contact}</span>
-          <span>{item?.agentName}</span>
+          <p>{labels?.offerPage.contact}</p>
+          <p>{item?.agentName}</p>
           <span>|</span>
-          <span>{item?.contactNumber}</span>
+          <p>{item?.contactNumber}</p>
           <span>|</span>
-          <span>{item?.contactEmail}</span>
+          <p>{item?.contactEmail}</p>
         </div>
       </header>
-      <main className={styles['filtered-results']}>
+      <main className={styles['filtered-result']}>
         <Offer
             key={offer.items[0]?.sys.id}
+            type={item?.type}
             region={item?.region}
             district={item?.district}
             size={item?.size}

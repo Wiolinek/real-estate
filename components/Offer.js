@@ -34,6 +34,7 @@ const Offer = ({ type, region, district, size, description, images }) => {
                   alt={`${type} ${labels?.offerPage.alt} in ${district} ${labels?.offerPage.districtMeta}`}
                   className={styles.image}
                   layout='fill'
+                  objectFit='cover'        
                   width={540}
                   height={378}
                   placeholder='blur'
@@ -51,6 +52,7 @@ const Offer = ({ type, region, district, size, description, images }) => {
                 alt={`${type} ${labels?.offerPage.alt} in ${district} ${labels?.offerPage.districtMeta}`}
                 className={styles.image}
                 layout='fill'
+                objectFit='cover' 
                 placeholder='blur'
                 blurDataURL
               >

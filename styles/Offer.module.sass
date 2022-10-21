@@ -17,6 +17,7 @@
         background-color: rgba(211, 206, 206, .7)
         border-radius: 6px
         transition: all .5s
+        min-width: 100%
         &:hover
             transform: scale(1.04)
 
@@ -36,7 +37,6 @@ header.filtered-result
             font-size: 1.1rem
             font-weight: 700
     .offer
-        min-height: 70%
         padding: 2rem
         background-color: rgba(211, 206, 206, .7)
         border-radius: 6px
@@ -53,10 +53,16 @@ header.filtered-result
                     margin-top: 14px
         .images
             display: grid
-            grid-template-columns: repeat(auto-fit, minmax(540px, .33fr))
-            justify-content: center
-            row-gap: 1vh
-            column-gap: 10px
+            gap: 1.5vh
+            .imageContainer
+                margin: 0 auto
+                width: 100%
+                > span
+                    position: unset !important
+                    display: inline !important
+                .image
+                    position: relative !important
+                    height: 100% !important
 
 .detail
     display: flex
@@ -67,15 +73,16 @@ header.filtered-result
         font-size: 1.1rem
         font-weight: 700
 
-.imageContainer
-    max-width: 540px !important
-    height: 360px
-    margin: 0 auto
-    > span
-        position: unset !important
-        height: 360px !important
+.district-offers
+    .imageContainer
+        max-width: 540px !important
+        height: 360px
+        margin: 0 auto
+        > span
+            max-width: 540px !important
+            position: unset !important
+            height: 100% !important
     .image
-        object-fit: cover
         width: 100% !important
         position: relative !important
         height: unset !important
@@ -84,9 +91,17 @@ header.filtered-result
 .single-offer a
     margin: 1rem auto .5rem auto
 
+@media (min-width: 1921px)
+    .filtered-result .images
+        grid-template-columns: repeat(3,minmax(0,1fr))
+
+@media (max-width: 1920px)
+     .filtered-result .images
+        grid-template-columns: repeat(3,minmax(0,1fr))
 
 @media (max-width: 1240px)
-    .offers-list,
+    .filtered-result .images
+        grid-template-columns: repeat(2,minmax(0,1fr))
     .district-offers-list
         grid-template-columns: repeat(2, 1fr)
 
@@ -98,11 +113,10 @@ header.filtered-result
             margin: 0
 
 @media (max-width: 768px)
+    .filtered-result .images
+        grid-template-columns: repeat(1,minmax(0,1fr))
     .district-offers-list-header
         flex-direction: column
-    main.district-offers
-        flex-direction: unset
-    .offers-list,
     .district-offers-list
         grid-template-columns: 1fr
     header.filtered-result
@@ -114,21 +128,19 @@ header.filtered-result
             display: none
 
 @media (max-width: 576px)
-    .images
-        grid-template-columns: minmax(1fr, 360px)
-    .imageContainer
-        max-width: 360px !important
-        height: 250px
-        > span
-            height: 250px !important
-
+    .district-offers
+        .images
+            grid-template-columns: minmax(1fr, 360px)
+        .imageContainer
+            max-width: 360px !important
+            height: 250px
 
 @media (max-width: 420px)
-    .images
-        grid-template-columns: minmax(1fr, 290px)
-    .imageContainer
-        max-width: 290px !important
-        height: 200px
-        > span
-            height: 200px !important
+    .district-offers
+        .images
+            grid-template-columns: repeat(1,minmax(0,1fr))
+        .imageContainer
+            max-width: 290px !important
+            height: 200px
   
+
