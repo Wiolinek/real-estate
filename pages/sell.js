@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
-import Form from '/components/SellForm';
+import Form from '/components/Form/SellForm';
 import { useAppContext } from '../components/GlobalContext';
 // import Client from '/pages/api/models/client';
 // const Client = require('/pages/api/models/client')

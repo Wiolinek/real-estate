@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { generateOptions } from '/helpers/form.helper';
 import { URLbuilder } from '/helpers/url.helper';
 import { listHandler } from '/helpers/list.helper';
-import { useAppContext } from '../components/GlobalContext';
+import { useAppContext } from '../GlobalContext';
 import { variables } from '/utils/globals';
 
 

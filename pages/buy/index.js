@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
-import Form from '/components/BuyForm'
+import Form from '/components/Form/BuyForm'
 import { useAppContext } from '/components/GlobalContext';
 import { generateDistricts } from '/helpers/form.helper';
 import { variables } from '/utils/globals';
