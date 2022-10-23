@@ -1,9 +1,9 @@
 import { useRouter } from 'next/router';
-import Link from 'next/link';
 import Head from 'next/head';
 import Offer from '/components/Offer'
 import { useAppContext } from '/components/GlobalContext';
 import { getData } from '/helpers/contentful.helper';
+import { schemaMarkupHandler, descriptionHandler } from '/helpers/schemaMarkup.helper';
 
 import styles from '/styles/Offer.module.sass';
 
@@ -49,12 +49,14 @@ const OfferComp = ({ offer }) => {
   const { labels } = useAppContext();
   const item = offer.items[0]?.fields
 
+  const schema = schemaMarkupHandler('product', {...item, description: descriptionHandler(item) });
 
   return (
     <>
       <Head>
         <title>{labels?.offerPage.title || ''}{offer.items[0]?.sys.id}</title>
         <meta name='description' content={`${item?.typet} in ${item?.district} ${labels?.resultsPage.metaDescription}`}/>
+        <script type='application/ld+json' dangerouslySetInnerHTML={ { __html: schema } }></script>
       </Head>
       <header className={styles['filtered-result']}>
         {/* <Link href='/buy'>{labels?.buttons.backToResults || ''}</Link> */}

@@ -4,6 +4,7 @@ import { useAppContext } from '../components/GlobalContext';
 
 import styles from '/styles/Offer.module.sass';
 
+
 const Offer = ({ type, region, district, size, description, images }) => {
   const { labels } = useAppContext();
 
