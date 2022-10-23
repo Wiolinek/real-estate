@@ -5,27 +5,28 @@ require('dotenv').config();
 
 const GlobalContext = createContext({})
 
+const query = `
+    query {
+        offerCollection {
+            items {
+                region
+                district
+                type
+            }
+        }
+        labelsCollection {
+            items {
+                labels
+            }
+        }
+    }`
+
+
 export const Context = ({ children }) => {
     const [regions, setRegions] = useState();
     const [labels, setLabels] = useState();
 
-    async function fetchData() {
-        const query = `
-        query {
-            offerCollection {
-                items {
-                    region
-                    district
-                    type
-                }
-            }
-            labelsCollection {
-                items {
-                    labels
-                }
-            }
-        }
-    `;
+    const fetchData = async (query) => {
         await fetch(`https://graphql.contentful.com/content/v1/spaces/${process.env.CF_SPACE_ID}?access_token=${process.env.CF_DELIVERY_ACCESS_TOKEN}`,
     {
         method: 'POST',
@@ -40,10 +41,7 @@ export const Context = ({ children }) => {
     .catch(err => console.error(err))
     }
 
-    useEffect(() => { 
-        fetchData();
-    }, [])
-
+    fetchData(query)
 
     const estateTypesList = listHandler(regions, 'type')
 

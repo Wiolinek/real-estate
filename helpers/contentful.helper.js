@@ -22,31 +22,3 @@ export const getData = (estate, region, district, offerId) => {
 
     return offers
 }
-
-
-
-// export const getRegions = () => {
-
-//     const query = `
-//         query {
-//             offerCollection {
-//                 items {
-//                     region
-//                     district
-//                 }
-//             }
-//         }
-//     `;
-
-//     fetch(`https://graphql.contentful.com/content/v1/spaces/${process.env.CF_SPACE_ID}?access_token=${process.env.CF_DELIVERY_ACCESS_TOKEN}`,
-//     {
-//         method: 'POST',
-//         headers: {'Content-Type': 'application/json'},
-//         body: JSON.stringify({ query })
-//     })
-//     .then(res => res.json())
-//         // .then(res => console.log(res.data.offerCollection.items))
-//         // .then(res => { return res })
-//     // .then(res => setRegions(res.data.offerCollection.items))
-//     .catch(err => console.error(err))
-// }
