@@ -33,10 +33,14 @@ const FormComp = ({ districtsState, sendToDB, setChosenDistrict, setChosenRegion
     };
 
     const validationSchema = Yup.object({
-        estateType: Yup.string().required(labels?.formErrors.estateType),
-        region: Yup.string().required(labels?.formErrors.region),
-        district: Yup.string().required(labels?.formErrors.district),
-        name: Yup.string().required(labels?.formErrors.name)
+        estateType: Yup.string()
+            .required(labels?.formErrors.estateType),
+        region: Yup.string()
+            .required(labels?.formErrors.region),
+        district: Yup.string()
+            .required(labels?.formErrors.district),
+        name: Yup.string()
+            .required(labels?.formErrors.name)
             .min(2, labels?.formErrors.nameLenght)
             .matches(/^[a-zA-Z]+[ ][a-zA-Z]+/, labels?.formErrors.nameMatch),
         phone: Yup.string()

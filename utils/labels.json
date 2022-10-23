@@ -66,7 +66,7 @@
             "district": "District is required",
             "name": "Name is required",
             "nameLength": "Name should have at least 2 letters",
-            "nameMatch": "You shmust provide name and surname",
+            "nameMatch": "You must provide name and surname",
             "phone": "Phone number is required",
             "phoneLength": "Phone number should have at least 12 numbers and starts with +420",
             "phoneStart": "Phone number should start with +420",
