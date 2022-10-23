@@ -1,27 +1,14 @@
-import { Formik, Form, useFormik } from 'formik';
+import { Formik, Form } from 'formik';
+import { useRouter } from 'next/router';
 import * as Yup from 'yup';
 import FormFieldControler from './FormFieldControler';
 import { useAppContext } from '/components/GlobalContext';
 import { listHandler } from '/helpers/list.helper';
-// import Client from '/lib/models/client';
-// import mongodb from '/lib/mongodb';
 
 
 const FormComp = ({ districtsState, sendToDB, setChosenDistrict, setChosenRegion, setChosenEstateType }) => {
     const { regions, estateTypes, labels } = useAppContext();
-
-    // async function sendToDB(data) {
-
-        // mongodb();
-        // db.collection('clients').insertOne(data)
-        // console.log(data)
-        // await Client.insertOne(data);
-        // await Client.create(data);
-
-        // const newClient = new Client(data);
-        // newClient.save(err => console.log(err));
-    // }
-
+    const router = useRouter();
 
     const initialValues = {
         estateType: '',
@@ -45,8 +32,10 @@ const FormComp = ({ districtsState, sendToDB, setChosenDistrict, setChosenRegion
             .matches(/^[a-zA-Z]+[ ][a-zA-Z]+/, labels?.formErrors.nameMatch),
         phone: Yup.string()
             .required(labels?.formErrors.phone)
-            .min(12, labels?.formErrors.phoneLenght)
-            .matches(/^(\+420)[0-9]/, labels?.formErrors.Start),
+            .min(13, labels?.formErrors.phoneLenght)
+            .max(13, labels?.formErrors.phoneLenghtMax)
+            .matches(/^(\+420)[0-9]/, labels?.formErrors.phoneStart)
+            .typeError(labels?.formErrors.phoneType || ''),
         email: Yup.string()
             .required(labels?.formErrors.email)
             .min(5, labels?.formErrors.emailLength)
@@ -54,16 +43,18 @@ const FormComp = ({ districtsState, sendToDB, setChosenDistrict, setChosenRegion
             .matches(/^[^@]+@[^@]+\.[^@]+$/, labels?.formErrors.emailMatch)
     });
 
-    const onSubmit = (values, onSubmitProps) => {      
-        sendToDB(values)
+    const onSubmit = async (values) => {     
+        await fetch(`http://localhost:3000/api/client`,
+    {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ values })
+    })
+    .then(res => res.json())
+    // .then(res=> console.log(res.success))
+    // .then(() => router.push('/'))
+    .catch(err => console.error(err))
     };
-
-    // const formik = useFormik({
-    //     initialValues,
-    //     onSubmit,
-    //     validationSchema,
-    // });
-
   
   return (
     <Formik

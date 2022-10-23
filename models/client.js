@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
+// import dynamic from 'next/dynamic';
 
 const clientSchema = new mongoose.Schema({
-    objectType: {
+    estateType: {
         type: String,
-        required: [true, 'choose the object type'],
+        required: [true, 'choose the estate type'],
     },
     region: {
         type: String,
@@ -23,7 +24,7 @@ const clientSchema = new mongoose.Schema({
     },
     email: {
         type: String,
-        required: [true, 'put your emai laddress'],
+        required: [true, 'put your email address'],
     },
 }, {collection: 'clients'})
 

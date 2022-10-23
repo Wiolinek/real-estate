@@ -7,7 +7,7 @@ import styles from '/styles/Basic.module.sass';
 
 
 const NotFound = () => {
-  const { regions, labels } = useAppContext();
+  const { labels } = useAppContext();
   const router = useRouter();
 
   useEffect(() => {
