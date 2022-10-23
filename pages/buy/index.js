@@ -30,7 +30,7 @@ const Buy = () => {
         <header className={styles.form}>
           <h1>{labels?.buyPage.header}</h1>
         </header>
-        <main className={styles.form}>
+        <main className={`${styles.form} ${styles.buy}`}>
           <article>
             <p>{labels?.buyPage.text}</p>
             <Link href='/'>{labels?.buttons.back || ''}</Link>

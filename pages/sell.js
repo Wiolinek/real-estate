@@ -58,7 +58,7 @@ const Sell = () => {
       <header className={styles.form}>
         <h1>{labels?.sellPage.header}</h1>
       </header>
-      <main className={styles.form}>
+      <main className={`${styles.form} ${styles.sell}`}>
         <article>
           <p className={styles.text}>{labels?.sellPage.text}</p>
           <Link href='/'>{labels?.buttons.back || ''}</Link>

@@ -1,3 +1,10 @@
+:root
+  --color-back-grey: rgba(211, 206, 206, .7)
+  --color-back-black: rgba(0, 0, 0, 0.85)
+  --color-white: rgb(255, 255, 255)
+  --color-black: rgb(0, 0, 0)
+  --color-red: rgb(255, 0, 0)
+  
 *
   margin: 0
   padding: 0
@@ -13,29 +20,20 @@ header
   width: 100%
   min-height: 19vh
   padding: 3vh 8vw 1vh
-  background-color: white
+  background-color: var(--color-white)
   text-align: center
-
-section
-  width: 100vw
-  min-height: 94vh
-  display: flex
-  flex-direction: column
-  align-items: center
 
 main
   display: flex
   justify-content: space-evenly
   min-height: 75vh
-  width: 100%
-  min-width: 300px
   text-align: center
   padding: 2vh 8vw
   
 button,
 a
   height: 70px
-  border: 1px solid black
+  border: 1px solid var(--color-black)
   border-radius: 30px
   font-size: 1.5rem
   text-decoration: none
@@ -44,28 +42,28 @@ a
   align-items: center
   transition: all .5s
   cursor: pointer
-  color: white
-  background-color: black
+  color: var(--color-white)
+  background-color: var(--color-black)
 
 button:hover,
 a:hover
-  color: black
-  background-color: white
+  color: var(--color-black)
+  background-color: var(--color-white)
 
 button[type=submit]
   align-self: flex-end
-  color: black
-  background-color: white
+  color: var(--color-black)
+  background-color: var(--color-white)
 
 button[type=submit]:hover
-  background-color: black
-  color: white
-  border: 1px solid white
+  background-color: var(--color-black)
+  color: var(--color-white)
+  border: 1px solid var(--color-white)
 
 footer
   height: 6vh
-  color: white
-  background-color: black
+  color: var(--color-white)
+  background-color: var(--color-black)
   display: flex
   justify-content: center
   align-items: center
