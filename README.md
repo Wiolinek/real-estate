@@ -7,7 +7,7 @@
 >
 > - browse available offers
 > - filter offers by region, district and type
-> - send a message by contact form
+> - sellers can send a message by contact form - data is stored in Mongo DB
 >
 > Agent can:
 >
@@ -37,8 +37,12 @@
 
 ## Screenshots
 
-![]()
-![]()
+![](public/images/screens/hp.png)
+![](public/images/screens/sell.png)
+![](public/images/screens/offers.png)
+![](public/images/screens/single-offer.png)
+![](public/images/screens/hp-mobile.png) ![](public/images/screens/buy-mobile.png)
+![](public/images/screens/offers-mobile.png) ![](public/images/screens/single-offer-mobile.png)
 
 ## Setup
 
@@ -81,9 +85,11 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 Project is: _in progress_
 
-## Room for Improvement
+## Room for Improvement / work in progress
 
-- implement email sending
+- implement Nodemail for email sending
+- add admin account for browse clients' contact data (stored in database)
+- add redirection to homepage after sending the form
 
 ## License
 
