@@ -44,7 +44,7 @@ const FormComp = ({ districtsState, sendToDB, setChosenDistrict, setChosenRegion
     })
 
     const onSubmit = async (values) => {     
-        await fetch(`http://localhost:3000/api/client`,
+        await fetch(`https://real-estate-two-phi.vercel.app/api/client`,
     {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
