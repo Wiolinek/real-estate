@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Head from 'next/head'
 import Offer from '/components/Offer'
+import Arrow from '/public/icons/arrow.svg'
 import { useAppContext } from '/components/GlobalContext'
 import { getData } from '/helpers/contentful.helper'
 
@@ -24,6 +25,8 @@ export async function getServerSideProps({ query }) {
 
 const OffersList = ({ offers, district }) => {
   const { labels } = useAppContext()
+
+  const backToTop = () => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
   
 
   return ( 
@@ -56,6 +59,12 @@ const OffersList = ({ offers, district }) => {
               )}
           </ul>
         }
+        <button type='button'
+          className={styles['back-to-top']}
+          onClick={backToTop}
+        >
+          <Arrow />
+        </button>
       </main>
     </>
   )

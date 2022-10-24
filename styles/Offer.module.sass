@@ -92,6 +92,23 @@ header.filtered-result
 .single-offer a
     margin: 1rem auto .5rem auto
 
+.back-to-top
+    width: 54px
+    height: 54px
+    padding: 12px
+    min-width: unset
+    border-radius: 50%
+    position: fixed
+    bottom: 6.6vh
+    right: 4vw
+    border: 1px solid var(--color-black)
+    svg
+       fill: var(--color-white)
+    &:hover
+        border: 1px solid var(--color-black)
+        svg
+            fill: var(--color-black)
+
 @media (min-width: 1921px)
     .filtered-result .images
         grid-template-columns: repeat(3,minmax(0,1fr))
@@ -143,3 +160,7 @@ header.filtered-result
         .imageContainer
             max-width: 290px !important
             height: 200px
+    .back-to-top
+        width: 44px
+        height: 44px
+        padding: 10px
