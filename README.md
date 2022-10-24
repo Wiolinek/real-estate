@@ -15,7 +15,7 @@
 >
 > Project was created to practice all technologies used here.
 
-## Live demo [_here_]()
+## Live demo [_here_](https://real-estate-n0fgb6gcn-wiolinek.vercel.app/)
 
 ## Table of Contents
 
@@ -41,8 +41,6 @@
 ![](public/images/screens/sell.png)
 ![](public/images/screens/offers.png)
 ![](public/images/screens/single-offer.png)
-![](public/images/screens/hp-mobile.png) ![](public/images/screens/buy-mobile.png)
-![](public/images/screens/offers-mobile.png) ![](public/images/screens/single-offer-mobile.png)
 
 ## Setup
 
