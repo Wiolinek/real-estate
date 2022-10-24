@@ -14,7 +14,7 @@
 >
 > Project was created to practice all technologies used here.
 
-## Live demo [_here_](https://real-estate-n0fgb6gcn-wiolinek.vercel.app/)
+## Live demo [_here_](https://real-estate-two-phi.vercel.app)
 
 ## Table of Contents
 
@@ -87,7 +87,6 @@ Project is: _in progress_
 
 - implement Nodemail for email sending
 - add admin account for browse clients' contact data (stored in database)
-- add redirection to homepage after sending the form
 
 ## License
 
