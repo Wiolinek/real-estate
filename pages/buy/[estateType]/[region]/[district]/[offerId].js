@@ -1,11 +1,11 @@
-import { useRouter } from 'next/router';
-import Head from 'next/head';
+import { useRouter } from 'next/router'
+import Head from 'next/head'
 import Offer from '/components/Offer'
-import { useAppContext } from '/components/GlobalContext';
-import { getData } from '/helpers/contentful.helper';
-import { schemaMarkupHandler, descriptionHandler } from '/helpers/schemaMarkup.helper';
+import { useAppContext } from '/components/GlobalContext'
+import { getData } from '/helpers/contentful.helper'
+import { schemaMarkupHandler, descriptionHandler } from '/helpers/schemaMarkup.helper'
 
-import styles from '/styles/Offer.module.sass';
+import styles from '/styles/Offer.module.sass'
 
 
 export const getStaticPaths = async() => {
@@ -28,7 +28,7 @@ export const getStaticPaths = async() => {
     paths,
     fallback: false,
   }
-};
+}
 
 
 export const getStaticProps = async(context) => {
@@ -41,15 +41,15 @@ export const getStaticProps = async(context) => {
         offer: offer,
     },
   }
-};
+}
 
 
 const OfferComp = ({ offer }) => {
   const router = useRouter();
-  const { labels } = useAppContext();
+  const { labels } = useAppContext()
   const item = offer.items[0]?.fields
 
-  const schema = schemaMarkupHandler('product', {...item, description: descriptionHandler(item) });
+  const schema = schemaMarkupHandler('product', {...item, description: descriptionHandler(item) })
 
   return (
     <>
@@ -85,4 +85,4 @@ const OfferComp = ({ offer }) => {
   )
 }
 
-export default OfferComp;
+export default OfferComp

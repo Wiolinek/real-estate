@@ -1,15 +1,15 @@
-import Link from 'next/link';
-import Head from 'next/head';
-import { useAppContext } from '../components/GlobalContext';
-import { schemaMarkupHandler, descriptionHandler } from '/helpers/schemaMarkup.helper';
+import Link from 'next/link'
+import Head from 'next/head'
+import { useAppContext } from '../components/GlobalContext'
+import { schemaMarkupHandler, descriptionHandler } from '/helpers/schemaMarkup.helper'
 
-import styles from '/styles/Basic.module.sass';
+import styles from '/styles/Basic.module.sass'
 
 
 const Home = () => {
-  const { labels } = useAppContext();
+  const { labels } = useAppContext()
 
-  const schema = schemaMarkupHandler('organization');
+  const schema = schemaMarkupHandler('organization')
 
   
   return (
@@ -31,4 +31,4 @@ const Home = () => {
   )
 }
 
-export default Home;
+export default Home

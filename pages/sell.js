@@ -1,23 +1,23 @@
-import { useEffect, useState } from 'react';
-import Link from 'next/link';
-import Head from 'next/head';
-import Form from '/components/Form/SellForm';
-import { useAppContext } from '../components/GlobalContext';
+import { useEffect, useState } from 'react'
+import Link from 'next/link'
+import Head from 'next/head'
+import Form from '/components/Form/SellForm'
+import { useAppContext } from '../components/GlobalContext'
 import { generateDistricts } from '/helpers/form.helper'
 import { variables } from '../utils/globals'
 
-import styles from '/styles/Form.module.sass';
+import styles from '/styles/Form.module.sass'
 
 
 const Sell = () => {
-  const { regions, labels } = useAppContext();
-  const [districtsState, setDistrictsState] = useState();
-  const [chosenRegion, setChosenRegion] = useState(variables.defaultValue);
-  const [chosenDistrict, setChosenDistrict] = useState(variables.defaultValue);
-  const [chosenEstateType, setChosenEstateType] = useState(variables.defaultValue);
+  const { regions, labels } = useAppContext()
+  const [districtsState, setDistrictsState] = useState()
+  const [chosenRegion, setChosenRegion] = useState(variables.defaultValue)
+  const [chosenDistrict, setChosenDistrict] = useState(variables.defaultValue)
+  const [chosenEstateType, setChosenEstateType] = useState(variables.defaultValue)
 
   useEffect(() => {
-    setDistrictsState(generateDistricts(chosenRegion, regions));
+    setDistrictsState(generateDistricts(chosenRegion, regions))
   }, [chosenRegion])
 
 
@@ -49,4 +49,4 @@ const Sell = () => {
   )
 }
 
-export default Sell;
+export default Sell

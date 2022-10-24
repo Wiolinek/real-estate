@@ -17,4 +17,4 @@ const MyDocument = () => {
   )
 }
 
-export default MyDocument;
+export default MyDocument

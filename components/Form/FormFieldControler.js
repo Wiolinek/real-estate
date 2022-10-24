@@ -1,5 +1,5 @@
-import Input from './formFields/Input';
-import Select from './formFields/Select';
+import Input from './formFields/Input'
+import Select from './formFields/Select'
 
 
 const FormFieldControler = ({as, ...props}) => {
@@ -13,4 +13,4 @@ const FormFieldControler = ({as, ...props}) => {
   }
 }
 
-export default FormFieldControler;
+export default FormFieldControler

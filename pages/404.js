@@ -1,18 +1,18 @@
-import Head from 'next/head';
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
-import { useAppContext } from '../components/GlobalContext';
+import Head from 'next/head'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
+import { useAppContext } from '../components/GlobalContext'
 
-import styles from '/styles/Basic.module.sass';
+import styles from '/styles/Basic.module.sass'
 
 
 const NotFound = () => {
-  const { labels } = useAppContext();
-  const router = useRouter();
+  const { labels } = useAppContext()
+  const router = useRouter()
 
   useEffect(() => {
     setTimeout(() => {
-      router.push('/');
+      router.push('/')
     }, 4000)
   }, [])
 
@@ -33,4 +33,4 @@ const NotFound = () => {
   )
 }
 
-export default NotFound;
+export default NotFound

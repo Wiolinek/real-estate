@@ -1,5 +1,4 @@
-const mongoose = require('mongoose');
-// import dynamic from 'next/dynamic';
+const mongoose = require('mongoose')
 
 const clientSchema = new mongoose.Schema({
     estateType: {
@@ -29,4 +28,4 @@ const clientSchema = new mongoose.Schema({
 }, {collection: 'clients'})
 
 
-export default mongoose.models['Client'] || mongoose.model('Client', clientSchema);
+export default mongoose.models['Client'] || mongoose.model('Client', clientSchema)

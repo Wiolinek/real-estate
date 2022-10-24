@@ -1,8 +1,8 @@
-import { Field, ErrorMessage } from 'formik';
-import { generateOptions } from '/helpers/form.helper';
-import { variables } from '/utils/globals';
+import { Field, ErrorMessage } from 'formik'
+import { generateOptions } from '/helpers/form.helper'
+import { variables } from '/utils/globals'
 
-import styles from '/styles/Form.module.sass';
+import styles from '/styles/Form.module.sass'
 
 
 const Select = ({ label, type, name, options, changeHandler }) => {
@@ -24,4 +24,4 @@ const Select = ({ label, type, name, options, changeHandler }) => {
     );
 }
 
-export default Select;
+export default Select

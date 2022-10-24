@@ -1,13 +1,13 @@
-import Link from 'next/link';
-import { generateOptions } from '/helpers/form.helper';
-import { URLbuilder } from '/helpers/url.helper';
-import { listHandler } from '/helpers/list.helper';
-import { useAppContext } from '../GlobalContext';
-import { variables } from '/utils/globals';
+import Link from 'next/link'
+import { generateOptions } from '/helpers/form.helper'
+import { URLbuilder } from '/helpers/url.helper'
+import { listHandler } from '/helpers/list.helper'
+import { useAppContext } from '../GlobalContext'
+import { variables } from '/utils/globals'
 
 
 const FormComp = ({ districtsState, chosenRegion, chosenDistrict, chosenEstateType, setChosenDistrict, setChosenRegion, setChosenEstateType }) => {
-    const { regions, estateTypes, labels } = useAppContext();
+    const { regions, estateTypes, labels } = useAppContext()
     
     const regionsList = listHandler(regions, 'region')
   
@@ -45,4 +45,4 @@ const FormComp = ({ districtsState, chosenRegion, chosenDistrict, chosenEstateTy
   );
 }
 
-export default FormComp;
+export default FormComp

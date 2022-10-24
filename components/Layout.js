@@ -1,4 +1,5 @@
-import Footer from './Footer';
+import Footer from './Footer'
+
 
 const Layout = ({ children }) => {
   
@@ -10,4 +11,4 @@ const Layout = ({ children }) => {
   );
 }
 
-export default Layout;
+export default Layout

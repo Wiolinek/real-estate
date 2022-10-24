@@ -1,7 +1,7 @@
 export const descriptionHandler = (item) => {
 
     return item?.description?.content?.map(item => item.content.map(text => text?.value)).flat().toString();
-};
+}
 
 
 export const schemaMarkupHandler = (type, data) => {
@@ -31,4 +31,4 @@ export const schemaMarkupHandler = (type, data) => {
         
         default: null
     }
-};
+}

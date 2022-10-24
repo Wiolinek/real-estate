@@ -7,4 +7,4 @@ export const URLbuilder = (estateType, region, district) => {
         .filter(Boolean)
         .map(item => item === variables.defaultValue ? variables.defaultValueUrlText : item)
         .join('/')
-};
+}

@@ -1,8 +1,8 @@
-import Image from 'next/image';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { useAppContext } from '../components/GlobalContext';
+import Image from 'next/image'
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import { useAppContext } from '../components/GlobalContext'
 
-import styles from '/styles/Offer.module.sass';
+import styles from '/styles/Offer.module.sass'
 
 
 const Offer = ({ type, region, district, size, description, images }) => {
@@ -62,4 +62,4 @@ const Offer = ({ type, region, district, size, description, images }) => {
   )
 }
 
-export default Offer;
+export default Offer

@@ -1,6 +1,6 @@
-import { Field, ErrorMessage } from 'formik';
+import { Field, ErrorMessage } from 'formik'
 
-import styles from '/styles/Form.module.sass';
+import styles from '/styles/Form.module.sass'
 
 
 const Input = ({ label, type, name }) => {
@@ -20,4 +20,4 @@ const Input = ({ label, type, name }) => {
     );
   }
   
-  export default Input;
+  export default Input

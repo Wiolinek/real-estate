@@ -1,6 +1,6 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
-import { listHandler } from '/helpers/list.helper';
-require('dotenv').config();
+import React, { createContext, useContext, useEffect, useState } from 'react'
+import { listHandler } from '/helpers/list.helper'
+require('dotenv').config()
 
 
 const GlobalContext = createContext({})
@@ -23,8 +23,8 @@ const query = `
 
 
 export const Context = ({ children }) => {
-    const [regions, setRegions] = useState();
-    const [labels, setLabels] = useState();
+    const [regions, setRegions] = useState()
+    const [labels, setLabels] = useState()
 
     const fetchData = async (query) => {
         await fetch(`https://graphql.contentful.com/content/v1/spaces/${process.env.CF_SPACE_ID}?access_token=${process.env.CF_DELIVERY_ACCESS_TOKEN}`,
@@ -57,8 +57,8 @@ export const Context = ({ children }) => {
       {children}
     </GlobalContext.Provider>
   )
-};
+}
 
 export const useAppContext = () => {
     return useContext(GlobalContext);
-};
+}

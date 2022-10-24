@@ -2,7 +2,7 @@ export const generateDistricts = (chosenRegion, regions) => {
 
     return Array.isArray(regions) && 
         Array.from(new Set(regions?.filter(region => region?.region === chosenRegion && region.district).map(region => region.district)))
-};
+}
 
 
 export const generateOptions = (defaultValue, optionsArr) => {
@@ -17,4 +17,4 @@ export const generateOptions = (defaultValue, optionsArr) => {
             )}
         </>
     )
-};
+}

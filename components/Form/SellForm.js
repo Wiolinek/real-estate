@@ -1,14 +1,14 @@
-import { Formik, Form } from 'formik';
-import { useRouter } from 'next/router';
-import * as Yup from 'yup';
-import FormFieldControler from './FormFieldControler';
-import { useAppContext } from '/components/GlobalContext';
-import { listHandler } from '/helpers/list.helper';
+import { Formik, Form } from 'formik'
+import { useRouter } from 'next/router'
+import * as Yup from 'yup'
+import FormFieldControler from './FormFieldControler'
+import { useAppContext } from '/components/GlobalContext'
+import { listHandler } from '/helpers/list.helper'
 
 
 const FormComp = ({ districtsState, sendToDB, setChosenDistrict, setChosenRegion, setChosenEstateType }) => {
-    const { regions, estateTypes, labels } = useAppContext();
-    const router = useRouter();
+    const { regions, estateTypes, labels } = useAppContext()
+    const router = useRouter()
 
     const initialValues = {
         estateType: '',
@@ -17,7 +17,7 @@ const FormComp = ({ districtsState, sendToDB, setChosenDistrict, setChosenRegion
         name: '',
         phone: '',
         email: '',
-    };
+    }
 
     const validationSchema = Yup.object({
         estateType: Yup.string()
@@ -41,7 +41,7 @@ const FormComp = ({ districtsState, sendToDB, setChosenDistrict, setChosenRegion
             .min(5, labels?.formErrors.emailLength)
             .email(labels?.formErrors.emailValid)
             .matches(/^[^@]+@[^@]+\.[^@]+$/, labels?.formErrors.emailMatch)
-    });
+    })
 
     const onSubmit = async (values) => {     
         await fetch(`http://localhost:3000/api/client`,
@@ -54,7 +54,7 @@ const FormComp = ({ districtsState, sendToDB, setChosenDistrict, setChosenRegion
     // .then(res=> console.log(res.success))
     // .then(() => router.push('/'))
     .catch(err => console.error(err))
-    };
+    }
   
   return (
     <Formik
@@ -123,4 +123,4 @@ const FormComp = ({ districtsState, sendToDB, setChosenDistrict, setChosenRegion
   );
 }
 
-export default FormComp;
+export default FormComp

@@ -1,14 +1,14 @@
-import Link from 'next/link';
-import Head from 'next/head';
-import Offer from '/components/Offer';
-import { useAppContext } from '/components/GlobalContext';
-import { getData } from '/helpers/contentful.helper';
+import Link from 'next/link'
+import Head from 'next/head'
+import Offer from '/components/Offer'
+import { useAppContext } from '/components/GlobalContext'
+import { getData } from '/helpers/contentful.helper'
 
 import styles from '/styles/Offer.module.sass'
 
 
 export async function getServerSideProps({ query }) {
-  const { estateType, district, region } = query;
+  const { estateType, district, region } = query
 
   const offers = await getData(estateType, region, district)
 
@@ -19,11 +19,11 @@ export async function getServerSideProps({ query }) {
       district,
     }
   }
-};
+}
 
 
 const OffersList = ({ offers, district }) => {
-  const { labels } = useAppContext();
+  const { labels } = useAppContext()
   
 
   return ( 
@@ -61,4 +61,4 @@ const OffersList = ({ offers, district }) => {
   )
 }
 
-export default OffersList;
+export default OffersList
