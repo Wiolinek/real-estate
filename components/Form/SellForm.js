@@ -51,8 +51,7 @@ const FormComp = ({ districtsState, sendToDB, setChosenDistrict, setChosenRegion
         body: JSON.stringify({ values })
     })
     .then(res => res.json())
-    // .then(res=> console.log(res.success))
-    // .then(() => router.push('/'))
+    .then(() => router.push('/sell/form-confirmation'))
     .catch(err => console.error(err))
     }
   

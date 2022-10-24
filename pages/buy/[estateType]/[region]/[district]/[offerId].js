@@ -50,6 +50,7 @@ const OfferComp = ({ offer }) => {
   const item = offer.items[0]?.fields
 
   const schema = schemaMarkupHandler('product', {...item, description: descriptionHandler(item) })
+  
 
   return (
     <>
@@ -59,7 +60,6 @@ const OfferComp = ({ offer }) => {
         <script type='application/ld+json' dangerouslySetInnerHTML={ { __html: schema } }></script>
       </Head>
       <header className={styles['filtered-result']}>
-        {/* <Link href='/buy'>{labels?.buttons.backToResults || ''}</Link> */}
         <button onClick={() => router.back()}>{labels?.buttons.backToResults || ''}</button>
         <div className={styles.contact}>
           <p>{labels?.offerPage.contact}</p>

@@ -14,7 +14,8 @@
             "send": "Send",
             "show": "Show offers",
             "more": "Read more...",
-            "backToResults": "Back to results"
+            "backToResults": "Back to results",
+            "backToHome": "Back to homepage"
         },
         "sellPage": {
             "title": "SELL something!",
@@ -76,6 +77,12 @@
             "emailLength": "Email address should have at least 5 letters",
             "emailMatch": "E-mail address should contain '@'",
             "emailValid": "Email must be a valid email address"
+        },
+        "formConfirm": {
+            "title": "Form confirmation",
+            "metaDescripion": "Form has been sent successfully",
+            "header": "Your form has been successfully sent",
+            "redirectionMessage": "Our agent will contact you shortly"
         }
     }
 }

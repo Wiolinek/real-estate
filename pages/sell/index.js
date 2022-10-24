@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
 import Form from '/components/Form/SellForm'
-import { useAppContext } from '../components/GlobalContext'
+import { useAppContext } from '/components/GlobalContext'
 import { generateDistricts } from '/helpers/form.helper'
-import { variables } from '../utils/globals'
+import { variables } from '/utils/globals'
 
 import styles from '/styles/Form.module.sass'
 

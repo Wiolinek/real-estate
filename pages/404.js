@@ -27,7 +27,7 @@ const NotFound = () => {
         <h1>{labels?.errorPage.header}</h1>
       </header>
       <main className={styles.basic}>
-        <p>{labels?.errorPage.redirectionMessage}</p>
+        <p className={styles.message}>{labels?.errorPage.redirectionMessage}</p>
       </main>
     </>
   )
