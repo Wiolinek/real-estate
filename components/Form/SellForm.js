@@ -43,7 +43,8 @@ const FormComp = ({ districtsState, sendToDB, setChosenDistrict, setChosenRegion
             .matches(/^[^@]+@[^@]+\.[^@]+$/, labels?.formErrors.emailMatch)
     })
 
-    const onSubmit = async (values) => {     
+    const onSubmit = async (values) => {   
+        // await fetch(`/api/client`,
         await fetch(`https://real-estate-two-phi.vercel.app/api/client`,
     {
         method: 'POST',
@@ -60,7 +61,6 @@ const FormComp = ({ districtsState, sendToDB, setChosenDistrict, setChosenRegion
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={onSubmit}
-
     >
         {formik => (
             <Form>
