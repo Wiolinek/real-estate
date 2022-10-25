@@ -19,7 +19,7 @@ module.exports = {
         source: '/api/client',
         headers: [
           { key: 'Access-Control-Allow-Credentials', value: 'true' },
-          { key: 'Access-Control-Allow-Origin', value: process.env.CORS_DESTINATION },
+          { key: 'Access-Control-Allow-Origin', value: 'https://real-estate-two-phi.vercel.app' },
           { key: 'Access-Control-Allow-Methods', value: 'GET,OPTIONS,PATCH,DELETE,POST,PUT' },
           { key: 'Access-Control-Allow-Headers', value: 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version' }
         ]
